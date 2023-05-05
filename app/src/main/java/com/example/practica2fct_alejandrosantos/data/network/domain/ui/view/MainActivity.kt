@@ -99,27 +99,6 @@ class MainActivity : AppCompatActivity() {
             adapter.notifyDataSetChanged()
         }
     }
-
-    /*private lateinit var binding: ActivityPantallaInicioBinding
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        binding = ActivityPantallaInicioBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        binding.practica1.setOnClickListener(){
-            val intent = Intent(this, PantallaInicio::class.java)
-            startActivity(intent)
-        }
-
-        binding.practica2.setOnClickListener(){
-            val intent = Intent(this, PantallaInicio::class.java)
-            startActivity(intent)
-        }
-
-    }*/
 }
 
 
