@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detalleFragment">
+
+
+    <TextView
+        android:id="@+id/tvCodigoAutoconsumo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="106dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/fragment.Detalle.tvCodigoAutoconsumo"
+        app:layout_constraintBottom_toTopOf="@+id/etCAU"
+        app:layout_constraintStart_toStartOf="@+id/etCAU"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etCAU"
+        android:layout_width="361dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvEstadoSolicitudAlta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCodigoAutoconsumo"
+        android:inputType="text"
+        android:labelFor="@+id/tvCodigoAutoconsumo" />
+
+    <TextView
+        android:id="@+id/tvEstadoSolicitudAlta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:text="@string/fragment.Detalle.tvEstadoSolicitudAlta"
+        app:layout_constraintBottom_toTopOf="@+id/etEstadoSolicitudAlta"
+        app:layout_constraintStart_toStartOf="@+id/etEstadoSolicitudAlta"
+        app:layout_constraintTop_toBottomOf="@+id/etCAU" />
+
+    <EditText
+        android:id="@+id/etEstadoSolicitudAlta"
+        android:layout_width="364dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="31dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvtipoAutoconsumo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEstadoSolicitudAlta"
+        android:inputType="text"
+        android:labelFor="@+id/tvEstadoSolicitudAlta"/>
+
+    <TextView
+        android:id="@+id/tvtipoAutoconsumo"
+        android:layout_width="361dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="9dp"
+        android:text="@string/fragment.Detalle.tvTipoAutoconsumo"
+        app:layout_constraintBottom_toTopOf="@+id/etTipoAutoconsumo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEstadoSolicitudAlta"
+        />
+
+    <EditText
+        android:id="@+id/etTipoAutoconsumo"
+        android:layout_width="361dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvCompensacionExedente"
+        app:layout_constraintEnd_toEndOf="@+id/tvCompensacionExedente"
+        app:layout_constraintStart_toEndOf="@+id/tvCompensacionExedente"
+        app:layout_constraintTop_toBottomOf="@+id/tvtipoAutoconsumo"
+        android:inputType="text"
+        android:labelFor="@+id/tvtipoAutoconsumo"/>
+
+    <TextView
+        android:id="@+id/tvCompensacionExedente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="17dp"
+        android:text="@string/fragment.Detalle.tvCompensaciónExedentes"
+        app:layout_constraintBottom_toTopOf="@+id/etCompensacionExedentes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTipoAutoconsumo" />
+
+    <EditText
+        android:id="@+id/etCompensacionExedentes"
+        android:layout_width="362dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPotenciaInstalacion"
+        app:layout_constraintEnd_toEndOf="@+id/tvCompensacionExedente"
+        app:layout_constraintStart_toEndOf="@+id/tvCompensacionExedente"
+        app:layout_constraintTop_toBottomOf="@+id/tvCompensacionExedente"
+        android:inputType="text"
+        android:labelFor="@+id/tvCompensacionExedente"/>
+
+    <TextView
+        android:id="@+id/tvPotenciaInstalacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="18dp"
+        android:text="@string/fragment.Detalle.tvPotenciaInstalación"
+        app:layout_constraintBottom_toTopOf="@+id/etPotenciaInstalacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCompensacionExedentes" />
+
+    <EditText
+        android:id="@+id/etPotenciaInstalacion"
+        android:layout_width="364dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="247dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPotenciaInstalacion"
+        android:inputType="text"
+        android:labelFor="@+id/tvPotenciaInstalacion"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
