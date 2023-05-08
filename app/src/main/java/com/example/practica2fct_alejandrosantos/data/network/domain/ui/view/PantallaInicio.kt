@@ -38,7 +38,8 @@ class PantallaInicio : AppCompatActivity() {
         }
 
         binding.practica2.setOnClickListener() {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, PantallaPrincipalSmartSolar::class.java)
+
             startActivity(intent)
         }
     }

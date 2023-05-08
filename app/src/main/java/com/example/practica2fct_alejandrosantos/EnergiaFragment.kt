@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.practica2fct_alejandrosantos.databinding.FragmentEnergiaBinding
 import com.example.practica2fct_alejandrosantos.databinding.FragmentInstalacionFrangmentBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -18,7 +19,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class EnergiaFragment : Fragment() {
-    private lateinit var  binding: FragmentInstalacionFrangmentBinding
+    private lateinit var  binding: FragmentEnergiaBinding
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,7 +31,7 @@ class EnergiaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentInstalacionFrangmentBinding.inflate(layoutInflater)
+        binding = FragmentEnergiaBinding.inflate(layoutInflater)
         return binding.root
 
     }

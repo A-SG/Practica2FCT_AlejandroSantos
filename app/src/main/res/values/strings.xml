@@ -43,12 +43,18 @@
     <string name="fragment.Energia.Informacion">Estamos trabajando en mejorar la App. Tus paneles solares siguen produciendo, en breve podrás segir viendo tu producción solar. Sentimos las molestias.</string>
 
 
-    <!--Terccero-->
+    <!--Tercer Fragment:Detalle-->
     <string name="fragment.Detalle.tvCodigoAutoconsumo">CAU(Código Autoconsumo)</string>
     <string name="fragment.Detalle.tvEstadoSolicitudAlta">Estado solicitud alta autoconsumidor</string>
     <string name="fragment.Detalle.tvTipoAutoconsumo">Tipo autoconsumo</string>
     <string name="fragment.Detalle.tvCompensaciónExedentes">Compensación de exedentes</string>
     <string name="fragment.Detalle.tvPotenciaInstalación">Potencia de instalación</string>
+
+    <!--Recursoso para la vista principal SmartSolar-->
+    <string name="pantallaPrincipalSmartSolar.nombretab1">Mi Instalación</string>
+    <string name="pantallaPrincipalSmartSolar.nombretab2">Energía</string>
+    <string name="pantallaPrincipalSmartSolar.nombretab3">Detalle</string>
+
 
 
 </resources>

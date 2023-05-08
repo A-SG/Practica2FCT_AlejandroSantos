@@ -5,11 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.practica2fct_alejandrosantos.databinding.FragmentDetalleBinding
 import com.example.practica2fct_alejandrosantos.databinding.FragmentInstalacionFrangmentBinding
 
 
 class DetalleFragment : Fragment() {
-    private lateinit var  binding: FragmentInstalacionFrangmentBinding
+    private lateinit var  binding: FragmentDetalleBinding
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -21,7 +22,7 @@ class DetalleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentInstalacionFrangmentBinding.inflate(layoutInflater)
+        binding = FragmentDetalleBinding.inflate(layoutInflater)
         return binding.root
 
     }
