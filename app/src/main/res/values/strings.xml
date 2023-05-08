@@ -39,5 +39,8 @@
     <string name="fragment.MiInstalacion.InformacionFactura">Aquí tienes los datos de tu instalación fotovoltaica en tiempo real</string>
     <string name="fragment.MiInstalacion.PorcentajeAutocosumo">Autoconsumo: 92%</string>
 
+    <!--Segundo Frangmet:Energia -->
+    <string name="fragment.Energia.Informacion">Estamos trabajando en mejorar la App. Tus paneles solares siguen produciendo, en breve podrás segir viendo tu producción solar. Sentimos las molestias.</string>
+
 
 </resources>
