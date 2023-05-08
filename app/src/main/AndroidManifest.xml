@@ -15,21 +15,23 @@
         android:theme="@style/Theme.Practica2FCT_AlejandroSAntos"
         tools:targetApi="31">
         <activity
+            android:name=".PantallaPrincipalSmartSolar"
+            android:exported="false" />
+        <activity
             android:name=".data.network.domain.ui.view.PantallaInicio"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".data.network.domain.ui.view.MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".data.network.domain.ui.view.SecondActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>

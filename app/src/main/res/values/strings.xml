@@ -26,4 +26,18 @@
     <string name="PracticasAndroid">Prácticas Android</string>
     <string name="Practica1">Práctica 1</string>
     <string name="Practica2">Práctica 2</string>
+
+
+    //Recursos vista pantallaPrincipalSmartSolar
+    <string name="pantallaPrincipalSmartsolar.toolbar.titulo">Smart Solar</string>
+    <string name="pantallaPrincipalSmartsolar.toolbar.textoBoton">Atrás</string>
+    <string name="pantallaPrincipalSmartsolar.tablelayout.TabItem1">Mi Instalación</string>
+    <string name="pantallaPrincipalSmartsolar.tablelayout.TabItem2">Energía</string>
+    <string name="pantallaPrincipalSmartsolar.tablelayout.TabItem3">Detalles</string>
+
+    <!--Primer Fragment: Mi Instalación-->
+    <string name="fragment.MiInstalacion.InformacionFactura">Aquí tienes los datos de tu instalación fotovoltaica en tiempo real</string>
+    <string name="fragment.MiInstalacion.PorcentajeAutocosumo">Autoconsumo: 92%</string>
+
+
 </resources>
