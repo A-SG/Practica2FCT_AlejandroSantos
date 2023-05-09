@@ -64,12 +64,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         adapter = FacturasAdapter(emptyList())
-        binding.rvFacturas.adapter = adapter
+        binding.activityMainRvFacturas.adapter = adapter
         facturasViewModel.onCreate()
 
 
         //Botón para pasar a la SecondActivity ( Actividad de fitros)
-        binding.imageButtonFiltro.setOnClickListener() {
+        binding.actvityMainToolbarIbtnFiltros.setOnClickListener() {
             lifecycleScope.launch {
                 withContext(Dispatchers.IO) {
                     val result = getFacturasUseCase()
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Acción que activa el Retromock al pulsar 5 veces el boton
-        binding.activarRetromock.setOnClickListener() {
+        binding.activityMainToolbarBtnActivarRetromock.setOnClickListener() {
             pulsaciones++
             if (pulsaciones == 5) {
                 facturasViewModel.onCreate()

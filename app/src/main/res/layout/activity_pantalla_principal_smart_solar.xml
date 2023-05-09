@@ -8,7 +8,7 @@
 
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
+        android:id="@+id/activitySecond.toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -69,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="@+id/pantallaSmartSolar.viewPager"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+        app:layout_constraintTop_toBottomOf="@+id/activitySecond.toolbar"
         app:tabMode="fixed"
         app:tabSelectedTextAppearance="@style/TextAppearance.AppCompat.Body1"
         app:tabTextAppearance="@style/TextAppearance.AppCompat.Body1" />

@@ -8,7 +8,7 @@
 
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
+        android:id="@+id/activitySecond.toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -90,7 +90,7 @@
         android:id="@+id/activityMain.rvFacturas"
         android:layout_width="match_parent"
         android:layout_height="608dp"
-        android:layout_below="@+id/toolbar2"
+        android:layout_below="@+id/activitySecond.toolbar"
         android:layout_alignParentTop="true"
         android:layout_marginTop="123dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

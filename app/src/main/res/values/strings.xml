@@ -7,28 +7,35 @@
     <string name="activityMain.toolbar.btnActivarRetromock">Retromock</string>
 
     <!--Recursos vista second activity-->
+    <string name="activitySecond.toolbar.titulo">Filtrar Facturas</string>
+    <string name="activitySecond.cardViewFiltroFecha.titulo">Con fecha de admisión</string>
+    <string name="activitySecond.cardViewFiltroFecha.tvFechainicio">Desde:</string>
+    <string name="activitySecond.cardViewFiltroFecha.tvFechaFin">Hasta:</string>
+    <string name="activitySecond.cardviewFiltroFecha.textoBtnFechaInicio">dia/mes/año</string>
+    <string name="activitySecond.cardviewFiltroFecha.textBtnFechaFin">dia/mes/año</string>
+    <string name="activitySecond.cardviewFiltroImporte.titulo">Por un importe </string>
+    <string name="activitySecond.cardviewFiltroImporte.tvImporteMinimo">0€</string>
+    <string name="activitySecond.cardviewFiltroEstado.cbestado">Por estado</string>
+    <string name="activitySecond.cardviewFiltroEstado.cbpagadas">Pagadas</string>
+    <string name="activitySecond.cardviewFiltroEstado.cbanuladas">Anuladas</string>
+    <string name="activitySecond.cardviewFiltroEstado.cbcuotafija">Cuota Fija</string>
+    <string name="activitySecond.cardviewFiltroEstado.cbpendientesPago">Pendientes de Pago</string>
+    <string name="activitySecond.cardviewFiltroEstado.cbplanDePago">Plan de pago</string>
 
 
-
+    activitySecond.cardviewFiltroEstado.cb
     <string name="tvInformacion">Información</string>
     <string name="tvfunciónNoDisponible">Esta funcionalidad aún no está disponible</string>
     <string name="btnCerrar">Cerrar</string>
-    <string name="tvFiltro">Filtrar Facturas</string>
-    <string name="tvfechaAdmision">Con fecha de admisión</string>
-    <string name="desde">Desde:</string>
-    <string name="hasta">Hasta:</string>
-    <string name="fecha">dia/mes/año</string>
-    <string name="importe">Por un importe </string>
-    <string name="estado">Por estado</string>
-    <string name="pagadas">Pagadas</string>
-    <string name="anuladas">Anuladas</string>
-    <string name="cuotafija">Cuota Fija</string>
-    <string name="pendientesPago">Pendientes de Pago</string>
-    <string name="planDePago">Plan de pago</string>
+
+
+
+
+
+
     <string name="aplicarFiltro">Aplicar filtros</string>
     <string name="borrarFiltros">Borrar filtros</string>
-    <string name="importeminimo">0€</string>
-    <string name="importemaximo">300€</string>
+
     <string name="importeselecionadominimo">0 -</string>
 
     <string name="PracticasAndroid">Prácticas Android</string>
