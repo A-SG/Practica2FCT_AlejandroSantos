@@ -50,10 +50,16 @@
     <string name="fragment.Detalle.tvCompensaciónExedentes">Compensación de exedentes</string>
     <string name="fragment.Detalle.tvPotenciaInstalación">Potencia de instalación</string>
 
-    <!--Recursoso para la vista principal SmartSolar-->
+    <!--Recursos para la vista principal SmartSolar-->
     <string name="pantallaPrincipalSmartSolar.nombretab1">Mi Instalación</string>
     <string name="pantallaPrincipalSmartSolar.nombretab2">Energía</string>
     <string name="pantallaPrincipalSmartSolar.nombretab3">Detalle</string>
+
+    <!--Recursospara la la vista pop-up perteneciente al fragmento detalle-->
+    <string name="popup_fragmentodetalle.titulopopup">Estado solicitud autoconsumo</string>
+    <string name="popup_fragmentodetalle.cuerpopopup">El tiempo estimado de activación de tu autoconsumo es de 1 a 2 meses, éste variará en función de tu comunidad autónoma y distibuidora</string>
+    <string name="popup_fragmentodetalle.textoboton">Aceptar</string>
+
 
 
 

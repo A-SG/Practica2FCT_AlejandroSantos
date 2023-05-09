@@ -1,6 +1,6 @@
 package com.example.practica2fct_alejandrosantos.data.network.domain.ui.view
 
-import DatePickerFragment
+import com.example.practica2fct_alejandrosantos.data.network.domain.ui.fragment.DatePickerFragment
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log

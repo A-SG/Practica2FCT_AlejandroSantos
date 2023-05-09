@@ -36,7 +36,7 @@ class FacturasViewHolder (view: View): RecyclerView.ViewHolder(view) {
                 popup.height = ViewGroup.LayoutParams.WRAP_CONTENT
                 popup.showAtLocation(popupView, 1, 0, 0)
 
-                val closeButton = popupView.findViewById<Button>(R.id.buttonsalir)
+                val closeButton = popupView.findViewById<Button>(R.id.popupFragmentDetalle_tvtitulo)
                 closeButton.setOnClickListener {
                     popup.dismiss()
                     popupactivo = false
