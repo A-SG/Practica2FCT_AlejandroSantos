@@ -189,10 +189,7 @@ class SecondActivity : AppCompatActivity() {
                 }
 
             }
-            Log.d("listaFiltradaPorImporte", listaFiltrada.toString())
         }
-
-        Log.d("ListaFiltradaCompleta", listaFiltrada.toString())
 
         if (binding.fechaInicial.text == "dia/mes/año" && binding.fechaFin.text == "dia/mes/año" && binding.slImporte.value == 0.0.toFloat() &&
             !binding.cbPagadas.isChecked && !binding.cbAnuladas.isChecked && !binding.cbCuotafija.isChecked && !binding.cbPlanpago.isChecked && !binding.cbPedientesPago.isChecked

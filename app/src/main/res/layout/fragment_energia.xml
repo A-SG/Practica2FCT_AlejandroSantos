@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".EnergiaFragment">
+        tools:context=".data.network.domain.ui.fragment.EnergiaFragment">
 
         <TextView
             android:id="@+id/fragmentEnergia.tvInformacion"

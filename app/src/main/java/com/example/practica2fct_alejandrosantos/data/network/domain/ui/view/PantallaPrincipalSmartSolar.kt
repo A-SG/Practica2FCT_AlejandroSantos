@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.practica2fct_alejandrosantos.R
-import com.example.practica2fct_alejandrosantos.ViewPagerAdapter
+import com.example.practica2fct_alejandrosantos.data.adapter.ViewPagerAdapter
 import com.example.practica2fct_alejandrosantos.databinding.ActivityPantallaPrincipalSmartSolarBinding
 import com.google.android.material.tabs.TabLayout
 

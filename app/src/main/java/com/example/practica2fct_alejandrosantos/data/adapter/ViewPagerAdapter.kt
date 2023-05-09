@@ -1,8 +1,11 @@
-package com.example.practica2fct_alejandrosantos
+package com.example.practica2fct_alejandrosantos.data.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.practica2fct_alejandrosantos.data.network.domain.ui.fragment.DetalleFragment
+import com.example.practica2fct_alejandrosantos.data.network.domain.ui.fragment.EnergiaFragment
+import com.example.practica2fct_alejandrosantos.data.network.domain.ui.fragment.InstalacionFrangment
 
 class ViewPagerAdapter(fm: FragmentManager, var tabCount: Int) : FragmentPagerAdapter(fm) {
 

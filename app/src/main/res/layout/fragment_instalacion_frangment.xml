@@ -11,7 +11,7 @@
    <androidx.constraintlayout.widget.ConstraintLayout
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
-     tools:context=".InstalacionFrangment">
+     tools:context=".data.network.domain.ui.fragment.InstalacionFrangment">
        <TextView
            android:id="@+id/fragmentEnergia.tvInformacion"
            android:layout_width="358dp"

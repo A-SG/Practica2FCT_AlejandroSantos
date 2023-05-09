@@ -1,13 +1,11 @@
-package com.example.practica2fct_alejandrosantos
+package com.example.practica2fct_alejandrosantos.data.network.domain.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.practica2fct_alejandrosantos.databinding.FragmentEnergiaBinding
-import com.example.practica2fct_alejandrosantos.databinding.FragmentInstalacionFrangmentBinding
-
 
 class EnergiaFragment : Fragment() {
     private lateinit var  binding: FragmentEnergiaBinding
