@@ -1,7 +1,15 @@
 <resources>
     <string name="app_name">Practica1_SantosAlejandro</string>
-    <string name="tvConsumo">&lt; Consumo</string>
-    <string name="tvFacturas">Facturas</string>
+
+    <!--Recursos vista main activity-->
+    <string name="activityMain.toolbar.tvConsumo">&lt; Consumo</string>
+    <string name="activityMain.toolbar.tvFacturas">Facturas</string>
+    <string name="activityMain.toolbar.btnActivarRetromock">Retromock</string>
+
+    <!--Recursos vista second activity-->
+
+
+
     <string name="tvInformacion">Información</string>
     <string name="tvfunciónNoDisponible">Esta funcionalidad aún no está disponible</string>
     <string name="btnCerrar">Cerrar</string>
@@ -22,13 +30,13 @@
     <string name="importeminimo">0€</string>
     <string name="importemaximo">300€</string>
     <string name="importeselecionadominimo">0 -</string>
-    <string name="activarRetromock">Retromock</string>
+
     <string name="PracticasAndroid">Prácticas Android</string>
     <string name="Practica1">Práctica 1</string>
     <string name="Practica2">Práctica 2</string>
 
 
-    //Recursos vista pantallaPrincipalSmartSolar
+    <!--Recursos vista pantallaPrincipalSmartSolar-->
     <string name="pantallaPrincipalSmartsolar.toolbar.titulo">Smart Solar</string>
     <string name="pantallaPrincipalSmartsolar.toolbar.textoBoton">Atrás</string>
     <string name="pantallaPrincipalSmartsolar.tablelayout.TabItem1">Mi Instalación</string>

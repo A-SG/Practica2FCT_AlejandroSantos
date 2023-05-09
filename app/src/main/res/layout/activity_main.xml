@@ -18,74 +18,83 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/pantallaSmartSolar.toolbar.tituloBoton"
-            app:layout_constraintTop_toBottomOf="@+id/pantallaSmartSolar.toolbar.tituloBoton">
+            app:layout_constraintBottom_toBottomOf="@+id/pantallaSmartSolar.toolbar.boton"
+            app:layout_constraintTop_toBottomOf="@+id/pantallaSmartSolar.toolbar.boton">
+
 
             <Button
-                android:id="@+id/pantallaSmartSolar.toolbar.tituloBoton"
+                android:id="@+id/activityMain.toolbar.btnConsumo"
                 style="@style/botonSinBordes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="113dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="211dp"
+                android:layout_marginBottom="11dp"
                 android:backgroundTint="@color/white"
-                android:text="@string/tvConsumo"
+                android:gravity="left"
+                android:text="@string/activityMain.toolbar.tvConsumo"
+                android:textAllCaps="false"
                 android:textColor="@color/green"
                 android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/activitymain.toolbar.tvtitulo"
+                app:layout_constraintEnd_toStartOf="@+id/actvityMain.toolbar.IbtnFiltros"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
             <ImageButton
-                android:id="@+id/imageButtonFiltro"
-                android:layout_width="41dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="23dp"
-                android:layout_marginEnd="37dp"
-                android:layout_marginBottom="21dp"
+                android:id="@+id/actvityMain.toolbar.IbtnFiltros"
+                android:layout_width="54dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="21dp"
+                android:layout_marginBottom="8dp"
                 android:background="@color/white"
                 android:src="@drawable/img"
-                app:layout_constraintBottom_toTopOf="@+id/activarRetromock"
+                app:layout_constraintBottom_toTopOf="@+id/activitymain.toolbar.tvtitulo"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/activarRetromock"
+                app:layout_constraintStart_toEndOf="@+id/activityMain.toolbar.btnConsumo"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/pantallaSmartSolar.toolbar.titulo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/activitymain.toolbar.tvtitulo"
+                android:layout_width="93dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="16dp"
-                android:gravity="center"
-                android:text="@string/tvFacturas"
+                android:layout_marginTop="60dp"
+                android:text="@string/activityMain.toolbar.tvFacturas"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/activarRetromock"
+                android:id="@+id/activityMain.toolbar.btnActivarRetromock"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginEnd="11dp"
-                android:layout_marginBottom="27dp"
-                android:text="@string/activarRetromock"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/activityMain.toolbar.btnActivarRetromock"
                 android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/actvityMain.toolbar.IbtnFiltros"
+                android:textAllCaps="false"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvFacturas"
+        android:id="@+id/activityMain.rvFacturas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="608dp"
         android:layout_below="@+id/toolbar2"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="159dp"
+        android:layout_marginTop="123dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_factura"/>
+        tools:listitem="@layout/item_factura" />
 
 </RelativeLayout>
 

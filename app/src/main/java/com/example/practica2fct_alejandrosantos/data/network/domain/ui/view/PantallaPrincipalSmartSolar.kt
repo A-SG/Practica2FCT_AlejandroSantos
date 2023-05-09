@@ -17,7 +17,7 @@ class PantallaPrincipalSmartSolar : AppCompatActivity() {
         binding = ActivityPantallaPrincipalSmartSolarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.pantallaSmartSolarToolbarTituloBoton.setOnClickListener(){
+        binding.pantallaSmartSolarToolbarBoton.setOnClickListener(){
             val intent = Intent(this, PantallaInicio::class.java).apply {
             }
             startActivity(intent)
