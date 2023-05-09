@@ -18,11 +18,11 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/button2"
-            app:layout_constraintTop_toBottomOf="@+id/button2">
+            app:layout_constraintBottom_toBottomOf="@+id/pantallaSmartSolar.toolbar.tituloBoton"
+            app:layout_constraintTop_toBottomOf="@+id/pantallaSmartSolar.toolbar.tituloBoton">
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/pantallaSmartSolar.toolbar.tituloBoton"
                 style="@style/botonSinBordes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/pantallaSmartSolar.toolbar.titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
