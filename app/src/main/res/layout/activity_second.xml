@@ -30,7 +30,7 @@
 
 
             <ImageButton
-                android:id="@+id/imageButtonSalir"
+                android:id="@+id/activitySecond.toolbar.imgBtnSalir"
                 android:layout_width="41dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="25dp"
@@ -38,11 +38,10 @@
                 android:background="@color/white"
                 android:src="@drawable/icono_salir"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/pantallaSmartSolar.toolbar.titulo"
+                android:id="@+id/activitySecond.toolbar.titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -55,8 +54,10 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageButtonSalir"
+                app:layout_constraintTop_toBottomOf="@+id/activitySecond.toolbar.imgBtnSalir"
                 app:layout_constraintVertical_bias="0.0" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -224,11 +225,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="36dp"
                         android:layout_marginBottom="18dp"
+                        android:textColor="@color/green"
                         android:textSize="20sp"
                         app:layout_constraintBottom_toTopOf="@+id/activitySecond.cardviewFiltroImporte.slImporte"
                         app:layout_constraintStart_toEndOf="@+id/activitySecond.cardviewFiltroImporte.titulo"
-                        tools:text="30"
-                        android:textColor="@color/green"/>
+                        tools:text="30" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -333,14 +334,14 @@
     </ScrollView>
 
     <Button
-        android:background="@drawable/borde_botones"
-        style="@style/botonSinBordes"
         android:id="@+id/btnAplicarFiltros"
+        style="@style/botonSinBordes"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="67dp"
         android:layout_marginEnd="67dp"
         android:layout_marginBottom="10dp"
+        android:background="@drawable/borde_botones"
         android:backgroundTint="@color/green"
         android:text="@string/aplicarFiltro"
         app:layout_constraintBottom_toTopOf="@+id/btnBorrarFiltros"
@@ -349,8 +350,8 @@
         app:layout_constraintTop_toBottomOf="@+id/activitySecond.Scrollview" />
 
     <Button
-        style="@style/botonSinBordes"
         android:id="@+id/btnBorrarFiltros"
+        style="@style/botonSinBordes"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"

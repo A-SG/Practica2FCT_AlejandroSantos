@@ -16,10 +16,10 @@
     <string name="activitySecond.cardviewFiltroImporte.titulo">Por un importe </string>
     <string name="activitySecond.cardviewFiltroImporte.tvImporteMinimo">0€</string>
     <string name="activitySecond.cardviewFiltroEstado.cbestado">Por estado</string>
-    <string name="activitySecond.cardviewFiltroEstado.cbpagadas">Pagadas</string>
+    <string name="activitySecond.cardviewFiltroEstado.cbpagadas">Pagada</string>
     <string name="activitySecond.cardviewFiltroEstado.cbanuladas">Anuladas</string>
     <string name="activitySecond.cardviewFiltroEstado.cbcuotafija">Cuota Fija</string>
-    <string name="activitySecond.cardviewFiltroEstado.cbpendientesPago">Pendientes de Pago</string>
+    <string name="activitySecond.cardviewFiltroEstado.cbpendientesPago">Pendiente de Pago</string>
     <string name="activitySecond.cardviewFiltroEstado.cbplanDePago">Plan de pago</string>
 
 
