@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.data.FacturaRepository
 import com.example.practica2fct_alejandrosantos.databinding.ActivitySecondBinding
+
 import com.example.practicaprueba.data.network.domain.model.Factura
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -53,7 +54,7 @@ class SecondActivity : AppCompatActivity() {
         }
 
         //Acción del botón de "Borrar filtros"
-        binding.btnBorrarFiltros.setOnClickListener() {
+        binding.activitySecondBtnBorrarFiltro.setOnClickListener() {
             binding.activitySecondCardviewFiltroFechaBtnFechaini.setText(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio)
             binding.activitySecondCardviewFiltroFechaBtnFechaFin.setText(R.string.activitySecond_cardviewFiltroFecha_textBtnFechaFin)
             binding.activitySecondCardviewFiltroImporteSlImporte.value = 0F
@@ -70,7 +71,7 @@ class SecondActivity : AppCompatActivity() {
 
 
         //Botón de aplicar filtros a la correspondintes facturas
-        binding.btnAplicarFiltros.setOnClickListener() {
+        binding.activitySecondBtnAplicarFiltro.setOnClickListener() {
             val resultIntent = Intent()
             val listaFacturas: String
             val json = Gson()

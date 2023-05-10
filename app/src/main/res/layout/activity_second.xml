@@ -23,7 +23,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="120dp"
             app:layout_constraintBottom_toBottomOf="@+id/pantallaSmartSolar.toolbar.boton"
             app:layout_constraintTop_toBottomOf="@+id/pantallaSmartSolar.toolbar.boton"
             tools:layout_editor_absoluteX="16dp">
@@ -31,31 +31,31 @@
 
             <ImageButton
                 android:id="@+id/activitySecond.toolbar.imgBtnSalir"
-                android:layout_width="41dp"
-                android:layout_height="40dp"
+                android:layout_width="42dp"
+                android:layout_height="47dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="20dp"
                 android:background="@color/white"
                 android:src="@drawable/icono_salir"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/activitySecond.toolbar.titulo"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/activitySecond.toolbar.titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="122dp"
                 android:gravity="center"
                 android:text="@string/activitySecond.toolbar.titulo"
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/activitySecond.toolbar.imgBtnSalir"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/activitySecond.toolbar.imgBtnSalir"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -64,9 +64,9 @@
 
     <ScrollView
         android:id="@+id/activitySecond.Scrollview"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnAplicarFiltros"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toTopOf="@+id/activitySecond.btnAplicarFiltro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activitySecond.toolbar">
@@ -98,7 +98,7 @@
                         android:layout_marginStart="15dp"
                         android:text="@string/activitySecond.cardViewFiltroFecha.titulo"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <LinearLayout
@@ -115,7 +115,8 @@
                             android:layout_marginStart="15dp"
                             android:text="@string/activitySecond.cardViewFiltroFecha.tvFechainicio"
                             android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textColor="@color/gris"/>
 
                         <Button
                             android:id="@+id/activitySecond.cardviewFiltroFecha.btnFechaini"
@@ -123,7 +124,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
                             android:backgroundTint="@color/gris"
-                            android:text="@string/activitySecond.cardviewFiltroFecha.textoBtnFechaInicio" />
+                            android:text="@string/activitySecond.cardviewFiltroFecha.textoBtnFechaInicio"
+                            android:textColor="@color/black"
+                            android:textAllCaps="false"
+                            android:textSize="15sp"/>
                     </LinearLayout>
 
 
@@ -141,14 +145,18 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/activitySecond.cardViewFiltroFecha.tvFechaFin"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:textColor="@color/gris"/>
 
                         <Button
                             android:id="@+id/activitySecond.cardviewFiltroFecha.btnFechaFin"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/gris"
-                            android:text="@string/activitySecond.cardviewFiltroFecha.textBtnFechaFin" />
+                            android:text="@string/activitySecond.cardviewFiltroFecha.textBtnFechaFin"
+                            android:textColor="@color/black"
+                            android:textAllCaps="false"
+                            android:textSize="15sp"/>
                     </LinearLayout>
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -156,7 +164,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/activitySecond.cardviewFiltroImporte"
                 android:layout_width="match_parent"
-                android:layout_height="182dp"
+                android:layout_height="200dp"
                 app:layout_constraintBottom_toTopOf="@+id/cardView4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -164,17 +172,17 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="183dp">
+                    android:layout_height="175dp">
 
                     <TextView
                         android:id="@+id/activitySecond.cardviewFiltroImporte.titulo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="18dp"
+                        android:layout_marginTop="17dp"
                         android:text="@string/activitySecond.cardviewFiltroImporte.titulo"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -186,7 +194,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginBottom="18dp"
                         android:text="@string/activitySecond.cardviewFiltroImporte.tvImporteMinimo"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         app:layout_constraintBottom_toTopOf="@+id/activitySecond.cardviewFiltroImporte.slImporte"
                         app:layout_constraintStart_toStartOf="parent" />
 
@@ -194,13 +202,15 @@
                         android:id="@+id/activitySecond.cardviewFiltroImporte.slImporte"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="11dp"
+                        android:layout_marginTop="115dp"
+                        android:layout_marginBottom="2dp"
                         android:value="0"
                         android:valueFrom="0"
                         android:valueTo="300"
                         app:haloColor="#8BC34A"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/activitySecond.divider2"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:thumbColor="@color/green"
                         app:thumbStrokeColor="@color/green"
                         app:tickColor="@color/green"
@@ -215,7 +225,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="25dp"
                         android:layout_marginBottom="18dp"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         app:layout_constraintBottom_toTopOf="@+id/activitySecond.cardviewFiltroImporte.slImporte"
                         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -223,13 +233,26 @@
                         android:id="@+id/variacion_importe"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="36dp"
-                        android:layout_marginBottom="18dp"
+                        android:layout_marginStart="68dp"
+                        android:layout_marginBottom="16dp"
                         android:textColor="@color/green"
                         android:textSize="20sp"
                         app:layout_constraintBottom_toTopOf="@+id/activitySecond.cardviewFiltroImporte.slImporte"
                         app:layout_constraintStart_toEndOf="@+id/activitySecond.cardviewFiltroImporte.titulo"
                         tools:text="30" />
+
+                    <View
+                        android:id="@+id/activitySecond.divider2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="9dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/activitySecond.cardviewFiltroImporte.slImporte" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -239,7 +262,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/activitySecond.cardviewFiltroEstado"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="400dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -258,11 +281,11 @@
                         android:layout_marginStart="15dp"
                         android:layout_marginBottom="14dp"
                         android:text="@string/activitySecond.cardviewFiltroEstado.cbpagadas"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toTopOf="@+id/activitySecond.cardviewFiltroEstado.cbanuladas"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/estado" />
+                        app:layout_constraintTop_toBottomOf="@+id/activitySecond.cardviewFiltroEstado.tvtitulo" />
 
                     <CheckBox
                         android:id="@+id/activitySecond.cardviewFiltroEstado.cbanuladas"
@@ -271,7 +294,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginBottom="20dp"
                         android:text="@string/activitySecond.cardviewFiltroEstado.cbanuladas"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toTopOf="@+id/activitySecond.cardviewFiltroEstado.cbcuotafija"
                         app:layout_constraintStart_toStartOf="parent"
@@ -284,7 +307,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginBottom="20dp"
                         android:text="@string/activitySecond.cardviewFiltroEstado.cbcuotafija"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toTopOf="@+id/activitySecond.cardviewFiltroEstado.cbplanDePago"
                         app:layout_constraintStart_toStartOf="parent"
@@ -296,7 +319,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
                         android:text="@string/activitySecond.cardviewFiltroEstado.cbpendientesPago"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -308,22 +331,22 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:text="@string/activitySecond.cardviewFiltroEstado.cbplanDePago"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toTopOf="@+id/activitySecond.cardviewFiltroEstado.cbpendientesPago"
                         app:layout_constraintStart_toStartOf="@+id/activitySecond.cardviewFiltroEstado.cbpendientesPago"
                         app:layout_constraintTop_toBottomOf="@+id/activitySecond.cardviewFiltroEstado.cbcuotafija" />
 
                     <TextView
-                        android:id="@+id/estado"
+                        android:id="@+id/activitySecond.cardviewFiltroEstado.tvtitulo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="18dp"
                         android:layout_marginBottom="19dp"
                         android:text="@string/activitySecond.cardviewFiltroEstado.cbestado"
                         android:textColor="@color/black"
-                        android:textSize="25sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toTopOf="@+id/activitySecond.cardviewFiltroEstado.cbpagadas"
                         app:layout_constraintStart_toStartOf="parent"
@@ -334,32 +357,32 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/btnAplicarFiltros"
+        android:id="@+id/activitySecond.btnAplicarFiltro"
         style="@style/botonSinBordes"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="67dp"
         android:layout_marginEnd="67dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/borde_botones"
         android:backgroundTint="@color/green"
-        android:text="@string/aplicarFiltro"
-        app:layout_constraintBottom_toTopOf="@+id/btnBorrarFiltros"
+        android:text="@string/activitySecond.btnAplicarFiltro"
+        app:layout_constraintBottom_toTopOf="@+id/activitySecond.btnBorrarFiltro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activitySecond.Scrollview" />
 
     <Button
-        android:id="@+id/btnBorrarFiltros"
+        android:id="@+id/activitySecond.btnBorrarFiltro"
         style="@style/botonSinBordes"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/white"
-        android:text="@string/borrarFiltros"
+        android:text="@string/activitySecond.btnBorrarFiltro"
         android:textColor="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAplicarFiltros" />
+        app:layout_constraintTop_toBottomOf="@+id/activitySecond.btnAplicarFiltro" />
 </androidx.constraintlayout.widget.ConstraintLayout>
