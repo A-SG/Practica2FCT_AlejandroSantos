@@ -4,11 +4,12 @@ import com.example.practica2fct_alejandrosantos.data.network.domain.ui.fragment.
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.data.FacturaRepository
+import com.example.practica2fct_alejandrosantos.data.network.domain.ui.viewmodel.FacturasViewModel
 import com.example.practica2fct_alejandrosantos.databinding.ActivitySecondBinding
-
 import com.example.practicaprueba.data.network.domain.model.Factura
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -23,6 +24,7 @@ import kotlin.math.ceil
 class SecondActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySecondBinding
+    private val facturasViewModel: FacturasViewModel by viewModels()
 
     @Inject
     lateinit var facturaRepository: FacturaRepository
@@ -126,7 +128,6 @@ class SecondActivity : AppCompatActivity() {
                 jsonFiltroFacturasModel,
                 object : TypeToken<List<Factura?>?>() {}.type
             )
-
             var pagadas = emptyList<Factura>()
             var anuladas = emptyList<Factura>()
             var cuotaFija = emptyList<Factura>()
@@ -152,6 +153,7 @@ class SecondActivity : AppCompatActivity() {
             if (binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked) {
                 pendientesPago = facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbpendientesPago) }
             }
+            Log.d("pendientesdePago", pendientesPago.toString())
 
             var listaPorEstado = pagadas + anuladas + planPago + cuotaFija + pendientesPago
 

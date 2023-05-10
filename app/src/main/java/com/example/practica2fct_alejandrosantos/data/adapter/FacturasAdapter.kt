@@ -7,7 +7,7 @@ import com.example.practica2fct_alejandrosantos.R
 import com.example.practicaprueba.data.network.domain.model.Factura
 
 
-class FacturasAdapter(var  facturas: List<Factura>): RecyclerView.Adapter<FacturasViewHolder>(){
+class FacturasAdapter(var facturas: List<Factura>) : RecyclerView.Adapter<FacturasViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FacturasViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

@@ -19,13 +19,14 @@
     <string name="activitySecond.cardviewFiltroEstado.cbpagadas">Pagada</string>
     <string name="activitySecond.cardviewFiltroEstado.cbanuladas">Anuladas</string>
     <string name="activitySecond.cardviewFiltroEstado.cbcuotafija">Cuota Fija</string>
-    <string name="activitySecond.cardviewFiltroEstado.cbpendientesPago">Pendiente de Pago</string>
+    <string name="activitySecond.cardviewFiltroEstado.cbpendientesPago">Pendiente de pago</string>
     <string name="activitySecond.cardviewFiltroEstado.cbplanDePago">Plan de pago</string>
     <string name="activitySecond.btnAplicarFiltro">Aplicar filtros</string>
     <string name="activitySecond.btnBorrarFiltro">Borrar filtros</string>
 
+
     <!--Recursos vista item del recyclerview-->
-    <string name="itemFacturas.simboloMoneda">€</string>
+    <string name="itemFacturas.simboloMoneda"> %1$s €</string>
 
 
     <!--Recursos vista item del recyclerview-->
@@ -47,9 +48,11 @@
     <string name="pantallaPrincipalSmartsolar.tablelayout.TabItem2">Energía</string>
     <string name="pantallaPrincipalSmartsolar.tablelayout.TabItem3">Detalles</string>
 
+
     <!--Primer Fragment: Mi Instalación-->
     <string name="fragment.MiInstalacion.InformacionFactura">Aquí tienes los datos de tu instalación fotovoltaica en tiempo real</string>
     <string name="fragment.MiInstalacion.PorcentajeAutocosumo">Autoconsumo: 92%</string>
+
 
     <!--Segundo Frangmet:Energia -->
     <string name="fragment.Energia.Informacion">Estamos trabajando en mejorar la App. Tus paneles solares siguen produciendo, en breve podrás segir viendo tu producción solar. Sentimos las molestias.</string>
@@ -62,10 +65,12 @@
     <string name="fragment.Detalle.tvCompensaciónExedentes">Compensación de exedentes</string>
     <string name="fragment.Detalle.tvPotenciaInstalación">Potencia de instalación</string>
 
+
     <!--Recursos para la vista principal SmartSolar-->
     <string name="pantallaPrincipalSmartSolar.nombretab1">Mi Instalación</string>
     <string name="pantallaPrincipalSmartSolar.nombretab2">Energía</string>
     <string name="pantallaPrincipalSmartSolar.nombretab3">Detalle</string>
+
 
     <!--Recursospara la la vista pop-up perteneciente al fragmento detalle-->
     <string name="popup_fragmentodetalle.titulopopup">Estado solicitud autoconsumo</string>
