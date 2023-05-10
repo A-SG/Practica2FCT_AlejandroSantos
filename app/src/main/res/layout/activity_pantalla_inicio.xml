@@ -7,29 +7,29 @@
     tools:context=".data.network.domain.ui.view.PantallaInicio">
 
     <TextView
-        android:id="@+id/tituloPrincipal"
+        android:id="@+id/pantallaInicio.tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="83dp"
         android:layout_marginBottom="32dp"
-        android:text="@string/PracticasAndroid"
+        android:text="@string/pantallaInicio.tvTitulo"
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/cardView5"
+        app:layout_constraintBottom_toTopOf="@+id/pantallaInicio.cardViewPractica1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView5"
+        android:id="@+id/pantallaInicio.cardViewPractica1"
         android:layout_width="match_parent"
         android:layout_height="85dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView6"
+        app:layout_constraintBottom_toTopOf="@+id/pantallaInicio.cardviewPractica2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloPrincipal">
+        app:layout_constraintTop_toBottomOf="@+id/pantallaInicio.tvTitulo">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -38,43 +38,43 @@
             tools:layout_editor_absoluteY="323dp">
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/pantallaInicio.cardviewPractica1.tvTitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="33dp"
                 android:layout_marginEnd="237dp"
-                android:text="@string/Practica1"
+                android:text="@string/pantallaInicio.cardviewPractica1.tvTitulo"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/practica1"
+                app:layout_constraintEnd_toStartOf="@+id/pantallaInicio.cardviewPractica1.imgBtnPractica1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/practica1"
+                android:id="@+id/pantallaInicio.cardviewPractica1.imgBtnPractica1"
                 android:layout_width="33dp"
                 android:layout_height="33dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/iconoenlace"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView5"
+                app:layout_constraintStart_toEndOf="@+id/pantallaInicio.cardviewPractica1.tvTitulo"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.557" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView6"
+        android:id="@+id/pantallaInicio.cardviewPractica2"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginBottom="432dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView5">
+        app:layout_constraintTop_toBottomOf="@+id/pantallaInicio.cardViewPractica1">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -83,28 +83,28 @@
             tools:layout_editor_absoluteY="194dp">
 
             <ImageButton
-                android:id="@+id/practica2"
+                android:id="@+id/pantallaInicio.cardviewPractica2.imgBtnPractica2"
                 android:layout_width="33dp"
                 android:layout_height="33dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/iconoenlace"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView6"
+                app:layout_constraintStart_toEndOf="@+id/pantallaInicio.cardviewPractica2.tvTitulo"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/pantallaInicio.cardviewPractica2.tvTitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="34dp"
                 android:layout_marginEnd="236dp"
-                android:text="@string/Practica2"
+                android:text="@string/pantallaInicio.cardviewPractica2.tvTitulo"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/practica2"
+                app:layout_constraintEnd_toStartOf="@+id/pantallaInicio.cardviewPractica2.imgBtnPractica2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

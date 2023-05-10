@@ -12,17 +12,18 @@ import com.example.practica2fct_alejandrosantos.databinding.ItemFacturaBinding
 import com.example.practicaprueba.data.network.domain.model.Factura
 
 
-class FacturasViewHolder (view: View): RecyclerView.ViewHolder(view) {
+class FacturasViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-    private var popupactivo : Boolean = false
+    private var popupactivo: Boolean = false
 
     //Uso de binding para acceder directamente a la vista
     val binding = ItemFacturaBinding.bind(view)
 
 
     //Función que se llama por cada uno de los items del recyclerView
+
     @SuppressLint("MissingInflatedId")
-    fun bind(factura: Factura){
+    fun bind(factura: Factura) {
 
         binding.itemFacturaTvEstadoFactura.text = factura.descEstado
         binding.itemFacturaTvImporteFactura.text = factura.importeOrdenacion.toString()
@@ -33,14 +34,15 @@ class FacturasViewHolder (view: View): RecyclerView.ViewHolder(view) {
             if (!popupactivo) {
                 popupactivo = true
                 val popup = PopupWindow(itemView.context)
-                val popupView = LayoutInflater.from(itemView.context).inflate(R.layout.popup_factura, null)
+                val popupView =
+                    LayoutInflater.from(itemView.context).inflate(R.layout.popup_factura, null)
                 popup.contentView = popupView
                 popup.width = ViewGroup.LayoutParams.WRAP_CONTENT
                 popup.height = ViewGroup.LayoutParams.WRAP_CONTENT
                 popup.showAtLocation(popupView, 1, 0, 0)
 
 
-                val closeButton = popupView.findViewById<Button>(R.id.popupFragmentDetalle_btnAceptar)
+                val closeButton = popupView.findViewById<Button>(R.id.popUpFactura_btnAceptar)
                 closeButton.setOnClickListener {
                     popup.dismiss()
                     popupactivo = false
@@ -48,7 +50,5 @@ class FacturasViewHolder (view: View): RecyclerView.ViewHolder(view) {
                 popup.showAsDropDown(itemView)
             }
         })
-
     }
-
 }

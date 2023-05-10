@@ -32,12 +32,12 @@ class PantallaInicio : AppCompatActivity() {
         binding = ActivityPantallaInicioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.practica1.setOnClickListener() {
+        binding.pantallaInicioCardviewPractica1ImgBtnPractica1.setOnClickListener() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        binding.practica2.setOnClickListener() {
+        binding.pantallaInicioCardviewPractica2ImgBtnPractica2.setOnClickListener() {
             val intent = Intent(this, PantallaPrincipalSmartSolar::class.java)
             startActivity(intent)
         }

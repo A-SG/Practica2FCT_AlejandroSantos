@@ -28,24 +28,16 @@
     <string name="itemFacturas.simboloMoneda">€</string>
 
 
+    <!--Recursos vista item del recyclerview-->
+    <string name="itemFactura.tvInformacion">Información</string>
+    <string name="itemFactura.tvfunciónNoDisponible">Esta funcionalidad aún no está disponible</string>
+    <string name="itemFactura.btnCerrar">Cerrar</string>
 
 
-    <string name="tvInformacion">Información</string>
-    <string name="tvfunciónNoDisponible">Esta funcionalidad aún no está disponible</string>
-    <string name="btnCerrar">Cerrar</string>
-
-
-
-
-
-
-
-
-    <string name="importeselecionadominimo">0 -</string>
-
-    <string name="PracticasAndroid">Prácticas Android</string>
-    <string name="Practica1">Práctica 1</string>
-    <string name="Practica2">Práctica 2</string>
+    <!--Recursos vista principal selección entre prácticas 1 y 2-->
+    <string name="pantallaInicio.tvTitulo">Prácticas Android</string>
+    <string name="pantallaInicio.cardviewPractica1.tvTitulo">Práctica 1</string>
+    <string name="pantallaInicio.cardviewPractica2.tvTitulo">Práctica 2</string>
 
 
     <!--Recursos vista pantallaPrincipalSmartSolar-->
@@ -79,8 +71,5 @@
     <string name="popup_fragmentodetalle.titulopopup">Estado solicitud autoconsumo</string>
     <string name="popup_fragmentodetalle.cuerpopopup">El tiempo estimado de activación de tu autoconsumo es de 1 a 2 meses, éste variará en función de tu comunidad autónoma y distibuidora</string>
     <string name="popup_fragmentodetalle.textoboton">Aceptar</string>
-
-
-
 
 </resources>

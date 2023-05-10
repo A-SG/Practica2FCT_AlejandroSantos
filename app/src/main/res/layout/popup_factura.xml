@@ -6,43 +6,46 @@
     android:layout_height="wrap_content"
     android:background="@color/white">
 
+
     <TextView
-        android:id="@+id/popupFragmentDetalle.tvtitulo"
+        android:id="@+id/popUpFactura.tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:text="@string/tvInformacion"
+        android:text="@string/itemFactura.tvInformacion"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/popupFragmentDetalle.tvInformacion"
+        app:layout_constraintBottom_toTopOf="@+id/popUpFactura.tvInformacion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.432" />
 
+
     <TextView
-        android:id="@+id/popupFragmentDetalle.tvInformacion"
+        android:id="@+id/popUpFactura.tvInformacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/tvfunciónNoDisponible"
-        app:layout_constraintBottom_toTopOf="@+id/popupFragmentDetalle.btnAceptar"
+        android:text="@string/itemFactura.tvfunciónNoDisponible"
+        app:layout_constraintBottom_toTopOf="@+id/popUpFactura.btnAceptar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
-        android:id="@+id/popupFragmentDetalle.btnAceptar"
+        android:id="@+id/popUpFactura.btnAceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/green"
-        android:text="@string/btnCerrar"
+        android:text="@string/itemFactura.btnCerrar"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popupFragmentDetalle.tvInformacion" />
+        app:layout_constraintTop_toBottomOf="@+id/popUpFactura.tvInformacion" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
