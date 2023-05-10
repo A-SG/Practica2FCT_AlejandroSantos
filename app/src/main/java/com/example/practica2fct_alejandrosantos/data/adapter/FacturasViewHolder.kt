@@ -1,5 +1,6 @@
 package com.example.practica2fct_alejandrosantos.data.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,12 +19,14 @@ class FacturasViewHolder (view: View): RecyclerView.ViewHolder(view) {
     //Uso de binding para acceder directamente a la vista
     val binding = ItemFacturaBinding.bind(view)
 
+
     //Función que se llama por cada uno de los items del recyclerView
+    @SuppressLint("MissingInflatedId")
     fun bind(factura: Factura){
 
-        binding.estadoFactura.text = factura.descEstado
-        binding.importeFactura.text = factura.importeOrdenacion.toString()
-        binding.fechaFactura.text = factura.fecha
+        binding.itemFacturaTvEstadoFactura.text = factura.descEstado
+        binding.itemFacturaTvImporteFactura.text = factura.importeOrdenacion.toString()
+        binding.itemFacturaTvFechaFactura.text = factura.fecha
 
         //Hacer click en cada una de las celdas
         itemView.setOnClickListener(View.OnClickListener {
@@ -36,7 +39,8 @@ class FacturasViewHolder (view: View): RecyclerView.ViewHolder(view) {
                 popup.height = ViewGroup.LayoutParams.WRAP_CONTENT
                 popup.showAtLocation(popupView, 1, 0, 0)
 
-                val closeButton = popupView.findViewById<Button>(R.id.popupFragmentDetalle_tvtitulo)
+
+                val closeButton = popupView.findViewById<Button>(R.id.popupFragmentDetalle_btnAceptar)
                 closeButton.setOnClickListener {
                     popup.dismiss()
                     popupactivo = false

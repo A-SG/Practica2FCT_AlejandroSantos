@@ -18,49 +18,54 @@
 
 
         <TextView
-            android:id="@+id/fechaFactura"
+            android:id="@+id/itemFactura.tvFechaFactura"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="155dp"
+            android:layout_marginStart="2dp"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/estadoFactura"
-            app:layout_constraintEnd_toStartOf="@+id/importeFactura"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/itemFactura.tvEstadoFactura"
+            app:layout_constraintStart_toStartOf="@+id/itemFactura.tvEstadoFactura"
             tools:text="31 Ago 2020" />
 
         <TextView
-            android:id="@+id/estadoFactura"
-            android:layout_width="140dp"
+            android:id="@+id/itemFactura.tvEstadoFactura"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
-            android:layout_marginEnd="136dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="138dp"
+            android:gravity="left"
             android:textColor="@color/red"
             android:textSize="16sp"
-            android:gravity="left"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/importeFactura"
-            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintEnd_toStartOf="@+id/itemFactura.tvImporteFactura"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fechaFactura"
-            tools:text="Pendiente de pago"
-            />
+            tools:text="Pendiente de pago" />
 
         <TextView
-            android:id="@+id/importeFactura"
+            android:id="@+id/itemFactura.tvImporteFactura"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="26dp"
             android:textColor="@color/black"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/fechaFactura"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/itemFactura.tvSimboloMoneda"
+            app:layout_constraintEnd_toStartOf="@+id/itemFactura.tvSimboloMoneda"
+            app:layout_constraintStart_toEndOf="@+id/itemFactura.tvEstadoFactura"
             tools:text="50,56€" />
+
+        <TextView
+            android:id="@+id/itemFactura.tvSimboloMoneda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="46dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="@string/itemFacturas.simboloMoneda"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/itemFactura.tvImporteFactura"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="€" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

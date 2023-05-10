@@ -60,7 +60,7 @@
                 android:id="@+id/activitymain.toolbar.tvtitulo"
                 android:layout_width="93dp"
                 android:layout_height="35dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="60dp"
                 android:text="@string/activityMain.toolbar.tvFacturas"
                 android:textColor="@color/black"
@@ -72,16 +72,16 @@
             <Button
                 android:id="@+id/activityMain.toolbar.btnActivarRetromock"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="3dp"
                 android:text="@string/activityMain.toolbar.btnActivarRetromock"
-                android:textSize="10sp"
+                android:textAllCaps="false"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/actvityMain.toolbar.IbtnFiltros"
-                android:textAllCaps="false"/>
+                app:layout_constraintTop_toBottomOf="@+id/actvityMain.toolbar.IbtnFiltros" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
@@ -89,10 +89,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/activityMain.rvFacturas"
         android:layout_width="match_parent"
-        android:layout_height="608dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/activitySecond.toolbar"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="123dp"
+        android:layout_marginTop="121dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_factura" />
 

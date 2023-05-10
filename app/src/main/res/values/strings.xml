@@ -24,6 +24,10 @@
     <string name="activitySecond.btnAplicarFiltro">Aplicar filtros</string>
     <string name="activitySecond.btnBorrarFiltro">Borrar filtros</string>
 
+    <!--Recursos vista item del recyclerview-->
+    <string name="itemFacturas.simboloMoneda">€</string>
+
+
 
 
     <string name="tvInformacion">Información</string>
