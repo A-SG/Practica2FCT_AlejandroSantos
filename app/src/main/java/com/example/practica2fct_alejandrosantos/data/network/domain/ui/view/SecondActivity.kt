@@ -1,9 +1,13 @@
 package com.example.practica2fct_alejandrosantos.data.network.domain.ui.view
 
+import android.app.DatePickerDialog
+import android.content.Context
 import com.example.practica2fct_alejandrosantos.data.network.domain.ui.fragment.DatePickerFragment
 import android.content.Intent
+import android.location.GnssAntennaInfo.Listener
 import android.os.Bundle
 import android.util.Log
+import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.data.FacturaRepository
@@ -12,6 +16,7 @@ import com.example.practicaprueba.data.network.domain.model.Factura
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.AndroidEntryPoint
+import java.sql.Timestamp
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
@@ -19,9 +24,16 @@ import kotlin.math.ceil
 
 
 @AndroidEntryPoint
-class SecondActivity : AppCompatActivity() {
+class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
     private lateinit var binding: ActivitySecondBinding
+    private val calendarfechaDesde = Calendar.getInstance()
+    private val calendarfechHasta = Calendar.getInstance()
+    private val formatter = SimpleDateFormat("dd MMMM yyyy")
+    private lateinit var  picker: DatePickerDialog
+    private lateinit var  pickerfin: DatePickerDialog
+    private val formatoFecha = SimpleDateFormat("dd/MM/yyyy")
+    private var numero: Int = 0
 
 
     @Inject
@@ -47,11 +59,26 @@ class SecondActivity : AppCompatActivity() {
         }
 
         binding.activitySecondCardviewFiltroFechaBtnFechaini.setOnClickListener() {
-            mostrarDatepicker()
+            //mostrarDatepicker()
+            numero = 1
+            picker = DatePickerDialog(this,this, calendarfechaDesde.get(Calendar.YEAR), calendarfechaDesde.get(Calendar.MONTH) , calendarfechaDesde.get(Calendar.DAY_OF_MONTH))
+            picker.datePicker.maxDate = calendarfechaDesde.timeInMillis
+            picker.show()
         }
 
         binding.activitySecondCardviewFiltroFechaBtnFechaFin.setOnClickListener() {
-            mostrarDatepickerFin()
+            numero = 2
+            pickerfin = DatePickerDialog(this,this, calendarfechHasta.get(Calendar.YEAR), calendarfechHasta.get(Calendar.MONTH) , calendarfechHasta.get(Calendar.DAY_OF_MONTH))
+            if( binding.activitySecondCardviewFiltroFechaBtnFechaini.text != getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio)) {
+                val fecha = formatter.parse(binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString())
+                calendarfechHasta.timeInMillis = fecha.time
+                pickerfin.datePicker.minDate = calendarfechHasta.timeInMillis
+                pickerfin.show()
+            }else{
+                pickerfin.datePicker.minDate = calendarfechHasta.timeInMillis
+                pickerfin.show()
+            }
+
         }
 
         //Acción del botón de "Borrar filtros"
@@ -94,7 +121,7 @@ class SecondActivity : AppCompatActivity() {
         Log.d("listaparaspinner", facturas.toString())
     }
 
-    private fun mostrarDatepicker() {
+    /*private fun mostrarDatepicker() {
         val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year) }
         datePicker.show(supportFragmentManager, "datePicker")
     }
@@ -111,14 +138,14 @@ class SecondActivity : AppCompatActivity() {
         val datePicker =
             DatePickerFragment { day, month, year -> onDateSelectedEnd(day, month, year) }
         datePicker.show(supportFragmentManager, "datePicker")
-    }
+    }*/
 
     //Función de filtrado de facturas
     private fun getParametrosEntradaActividad(): List<Factura> {
         //Variables
         jsonFiltroFacturasModel = intent.getStringExtra("listaFacturasSinFiltrar").toString()
         var listaFiltrada = emptyList<Factura>()
-        val formatoFecha = SimpleDateFormat("dd/MM/yyyy")
+
         val firstDate: Date
         val secondDate: Date
 
@@ -197,5 +224,25 @@ class SecondActivity : AppCompatActivity() {
             listaFiltrada = facturas
         }
         return listaFiltrada
+    }
+
+    override fun onDateSet(p0: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        if (numero == 1)
+        {
+            calendarfechaDesde.set(year,month,dayOfMonth)
+            mostrarFechaFormateada(calendarfechaDesde.timeInMillis)
+        }else if(numero == 2){
+            calendarfechaDesde.set(year,month,dayOfMonth)
+            mostrarFechaFormateadaFin(calendarfechHasta.timeInMillis)
+        }
+
+
+    }
+
+    private fun mostrarFechaFormateada(timestamp: Long){
+        binding.activitySecondCardviewFiltroFechaBtnFechaini.text = formatter.format(timestamp)
+    }
+    private fun mostrarFechaFormateadaFin(timestamp: Long){
+        binding.activitySecondCardviewFiltroFechaBtnFechaFin.text = formatter.format(timestamp)
     }
 }

@@ -8,9 +8,11 @@ import android.widget.DatePicker
 import androidx.fragment.app.DialogFragment
 import com.example.practica2fct_alejandrosantos.R
 import java.util.*
+import javax.inject.Inject
 
 class DatePickerFragmentFin (val listener: (day: Int, month:Int, year: Int)-> Unit) : DialogFragment(), DatePickerDialog.OnDateSetListener{
 
+    @Inject
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, day: Int) {
         listener(day, month + 1, year)
@@ -22,8 +24,7 @@ class DatePickerFragmentFin (val listener: (day: Int, month:Int, year: Int)-> Un
         val year = c.get(Calendar.YEAR)
 
 
-        val picker = DatePickerDialog(activity as Context,
-            R.style.datePicker, this, year, month, day)
+        val picker = DatePickerDialog(activity as Context, R.style.datePicker, this, year, month, day)
         return  picker
     }
 
