@@ -24,7 +24,7 @@ import kotlin.math.ceil
 class SecondActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySecondBinding
-    private val facturasViewModel: FacturasViewModel by viewModels()
+
 
     @Inject
     lateinit var facturaRepository: FacturaRepository
@@ -42,6 +42,7 @@ class SecondActivity : AppCompatActivity() {
         val config = baseContext.resources.configuration
         config.setLocale(locale)
         baseContext.createConfigurationContext(config)
+
 
         binding.activitySecondToolbarImgBtnSalir.setOnClickListener() {
             finish()
@@ -68,7 +69,7 @@ class SecondActivity : AppCompatActivity() {
         }
 
         binding.activitySecondCardviewFiltroImporteSlImporte.addOnChangeListener { slider, value, fromUser ->
-            binding.variacionImporte.text = ceil(value).toInt().toString()
+            binding.variacionImporte.text =getString(R.string.itemFacturas_simboloMoneda, ceil(value).toInt().toString())
         }
 
 
@@ -87,7 +88,7 @@ class SecondActivity : AppCompatActivity() {
         jsonFiltroFacturasModel = intent.getStringExtra("listaFacturasSinFiltrar").toString()
         facturas = json.fromJson(jsonFiltroFacturasModel, object : TypeToken<List<Factura?>?>() {}.type)
         var ordenPorImporte = facturas.sortedByDescending { facturas: Factura -> facturas.importeOrdenacion }
-        binding.tvImporteMaximo.text = (ordenPorImporte.first().importeOrdenacion.toInt() + 1).toString()
+        binding.tvImporteMaximo.text = getString(R.string.itemFacturas_simboloMoneda,ordenPorImporte.first().importeOrdenacion.toInt() + 1)
         binding.activitySecondCardviewFiltroImporteSlImporte.valueTo = ceil(ordenPorImporte.first().importeOrdenacion).toFloat()
         binding.activitySecondCardviewFiltroImporteSlImporte.value = 0.0.toFloat()
 
@@ -153,7 +154,6 @@ class SecondActivity : AppCompatActivity() {
             if (binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked) {
                 pendientesPago = facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbpendientesPago) }
             }
-            Log.d("pendientesdePago", pendientesPago.toString())
 
             var listaPorEstado = pagadas + anuladas + planPago + cuotaFija + pendientesPago
 
@@ -164,22 +164,22 @@ class SecondActivity : AppCompatActivity() {
             }
 
             //Filtrado de facturas por fecha de inicio y fecha de fin
-            if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() != "dia/mes/año" && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() != "dia/mes/año" ){
+            if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() != getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() != getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio)  ){
                 firstDate = formatoFecha.parse(binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString())
                 secondDate = formatoFecha.parse(binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString())
 
                 listaFiltrada = listaFiltrada.filter { factura: Factura -> formatoFecha.parse(factura.fecha) >= secondDate && formatoFecha.parse(factura.fecha) <= firstDate}
             }
-            else  if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() == "dia/mes/año" && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() != "dia/mes/año" ){
+            else  if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() != getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) ){
                 firstDate = formatoFecha.parse(binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString())
                 listaFiltrada = listaFiltrada.filter { factura: Factura -> formatoFecha.parse(factura.fecha) <= firstDate}
 
-            }else  if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() != "dia/mes/año" && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() == "dia/mes/año" ){
+            }else  if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() != getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio)  ){
 
                 secondDate = formatoFecha.parse(binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString())
                 listaFiltrada = listaFiltrada.filter { factura: Factura -> formatoFecha.parse(factura.fecha) >= secondDate }
             }
-            else if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() == "dia/mes/año" && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() == "dia/mes/año" )
+            else if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) )
             {}
 
             //Filtrado de factura por su importe
@@ -193,7 +193,7 @@ class SecondActivity : AppCompatActivity() {
         }
 
         //Si no se realiza ningunfiltro sobre la lista, devolverá la misma lista cargada al principio
-        if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text == "dia/mes/año" && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text == "dia/mes/año" && binding.activitySecondCardviewFiltroImporteSlImporte.value == 0.0.toFloat() &&
+        if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio)  && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio)  && binding.activitySecondCardviewFiltroImporteSlImporte.value == 0.0.toFloat() &&
             !binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked && !binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked && !binding.activitySecondCardviewFiltroEstadoCbcuotafija.isChecked && !binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked && !binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked
         ) {
             listaFiltrada = facturas

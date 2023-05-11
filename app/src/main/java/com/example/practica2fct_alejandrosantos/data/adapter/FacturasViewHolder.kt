@@ -27,6 +27,7 @@ class FacturasViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     @SuppressLint("MissingInflatedId")
     fun bind(factura: Factura) {
+
         val formatoFechaEntrada = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         val formatoFechaSalida = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
         var cambioFecha = factura.fecha
