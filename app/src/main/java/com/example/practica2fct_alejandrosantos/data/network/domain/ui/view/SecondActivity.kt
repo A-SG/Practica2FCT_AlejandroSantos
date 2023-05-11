@@ -4,11 +4,9 @@ import com.example.practica2fct_alejandrosantos.data.network.domain.ui.fragment.
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.data.FacturaRepository
-import com.example.practica2fct_alejandrosantos.data.network.domain.ui.viewmodel.FacturasViewModel
 import com.example.practica2fct_alejandrosantos.databinding.ActivitySecondBinding
 import com.example.practicaprueba.data.network.domain.model.Factura
 import com.google.gson.Gson
@@ -87,10 +85,11 @@ class SecondActivity : AppCompatActivity() {
 
         jsonFiltroFacturasModel = intent.getStringExtra("listaFacturasSinFiltrar").toString()
         facturas = json.fromJson(jsonFiltroFacturasModel, object : TypeToken<List<Factura?>?>() {}.type)
-        var ordenPorImporte = facturas.sortedByDescending { facturas: Factura -> facturas.importeOrdenacion }
+        val ordenPorImporte = facturas.sortedByDescending { facturas: Factura -> facturas.importeOrdenacion }
         binding.tvImporteMaximo.text = getString(R.string.itemFacturas_simboloMoneda,ordenPorImporte.first().importeOrdenacion.toInt() + 1)
         binding.activitySecondCardviewFiltroImporteSlImporte.valueTo = ceil(ordenPorImporte.first().importeOrdenacion).toFloat()
         binding.activitySecondCardviewFiltroImporteSlImporte.value = 0.0.toFloat()
+        binding.activitySecondCardviewFiltroImporteTvImporteMinimo.text = getString(R.string.itemFacturas_simboloMoneda, getString( R.string.activitySecond_cardviewFiltroImporte_tvImporteMinimo))
 
         Log.d("listaparaspinner", facturas.toString())
     }
@@ -180,7 +179,6 @@ class SecondActivity : AppCompatActivity() {
                 listaFiltrada = listaFiltrada.filter { factura: Factura -> formatoFecha.parse(factura.fecha) >= secondDate }
             }
             else if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) )
-            {}
 
             //Filtrado de factura por su importe
             if (listaFiltrada.isEmpty()) {

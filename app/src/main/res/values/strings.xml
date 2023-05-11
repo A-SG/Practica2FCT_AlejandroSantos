@@ -14,7 +14,7 @@
     <string name="activitySecond.cardviewFiltroFecha.textoBtnFechaInicio">dia/mes/año</string>
     <string name="activitySecond.cardviewFiltroFecha.textBtnFechaFin">dia/mes/año</string>
     <string name="activitySecond.cardviewFiltroImporte.titulo">Por un importe </string>
-    <string name="activitySecond.cardviewFiltroImporte.tvImporteMinimo">0€</string>
+    <string name="activitySecond.cardviewFiltroImporte.tvImporteMinimo">0</string>
     <string name="activitySecond.cardviewFiltroEstado.cbestado">Por estado</string>
     <string name="activitySecond.cardviewFiltroEstado.cbpagadas">Pagada</string>
     <string name="activitySecond.cardviewFiltroEstado.cbanuladas">Anuladas</string>
@@ -43,7 +43,7 @@
 
     <!--Recursos vista pantallaPrincipalSmartSolar-->
     <string name="pantallaPrincipalSmartsolar.toolbar.titulo">Smart Solar</string>
-    <string name="pantallaPrincipalSmartsolar.toolbar.textoBoton">Atrás</string>
+    <string name="pantallaPrincipalSmartsolar.toolbar.textoBoton">&lt; Atrás</string>
     <string name="pantallaPrincipalSmartsolar.tablelayout.TabItem1">Mi Instalación</string>
     <string name="pantallaPrincipalSmartsolar.tablelayout.TabItem2">Energía</string>
     <string name="pantallaPrincipalSmartsolar.tablelayout.TabItem3">Detalles</string>

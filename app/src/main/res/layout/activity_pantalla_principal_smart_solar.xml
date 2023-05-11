@@ -36,10 +36,11 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="7dp"
                 android:backgroundTint="@color/white"
+                android:gravity="left"
                 android:text="@string/pantallaPrincipalSmartsolar.toolbar.textoBoton"
+                android:textAllCaps="false"
                 android:textColor="@color/green"
                 android:textSize="15sp"
-                android:gravity="left"
                 app:layout_constraintBottom_toTopOf="@+id/pantallaSmartSolar.toolbar.titulo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
