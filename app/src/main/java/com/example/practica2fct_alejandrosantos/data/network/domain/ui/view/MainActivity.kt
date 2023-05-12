@@ -11,8 +11,7 @@ import com.example.practica2fct_alejandrosantos.data.adapter.FacturasAdapter
 import com.example.practica2fct_alejandrosantos.data.network.domain.GetFacturasUseCase
 import com.example.practica2fct_alejandrosantos.data.network.domain.ui.viewmodel.FacturasViewModel
 import com.example.practica2fct_alejandrosantos.databinding.ActivityMainBinding
-import com.example.practica2fct_alejandrosantos.databinding.ActivityPantallaInicioBinding
-import com.example.practicaprueba.data.network.domain.model.Factura
+import com.example.practica2fct_alejandrosantos.data.network.domain.model.Factura
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.AndroidEntryPoint

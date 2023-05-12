@@ -17,7 +17,6 @@ class ViewPagerAdapter(fm: FragmentManager, var tabCount: Int) : FragmentPagerAd
             else -> InstalacionFrangment()
         }
     }
-
     override fun getCount(): Int {
         return tabCount
     }

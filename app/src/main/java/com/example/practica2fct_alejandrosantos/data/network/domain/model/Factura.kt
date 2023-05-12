@@ -1,4 +1,4 @@
-package com.example.practicaprueba.data.network.domain.model
+package com.example.practica2fct_alejandrosantos.data.network.domain.model
 
 import com.example.practica2fct_alejandrosantos.data.model.FacturaModel
 

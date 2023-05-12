@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.data.FacturaRepository
 import com.example.practica2fct_alejandrosantos.databinding.ActivitySecondBinding
-import com.example.practicaprueba.data.network.domain.model.Factura
+import com.example.practica2fct_alejandrosantos.data.network.domain.model.Factura
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.AndroidEntryPoint

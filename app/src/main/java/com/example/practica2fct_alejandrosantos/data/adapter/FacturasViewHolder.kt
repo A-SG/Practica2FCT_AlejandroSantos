@@ -1,7 +1,6 @@
 package com.example.practica2fct_alejandrosantos.data.adapter
 
 import android.annotation.SuppressLint
-import android.provider.Settings.System.getString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,7 @@ import android.widget.PopupWindow
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.databinding.ItemFacturaBinding
-import com.example.practicaprueba.data.network.domain.model.Factura
+import com.example.practica2fct_alejandrosantos.data.network.domain.model.Factura
 import java.text.SimpleDateFormat
 import java.util.*
 

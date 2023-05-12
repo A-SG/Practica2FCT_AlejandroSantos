@@ -17,7 +17,7 @@ class PantallaPrincipalSmartSolar : AppCompatActivity() {
         binding = ActivityPantallaPrincipalSmartSolarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.pantallaSmartSolarToolbarBoton.setOnClickListener(){
+        binding.pantallaSmartSolarToolbarBoton.setOnClickListener() {
             val intent = Intent(this, PantallaInicio::class.java).apply {
             }
             startActivity(intent)
@@ -29,7 +29,10 @@ class PantallaPrincipalSmartSolar : AppCompatActivity() {
 
     private fun setupViewPager() {
         binding.pantallaSmartSolarViewPager.apply {
-            adapter = ViewPagerAdapter(supportFragmentManager, binding.pantallaSmartSolarTablayout.tabCount)
+            adapter = ViewPagerAdapter(
+                supportFragmentManager,
+                binding.pantallaSmartSolarTablayout.tabCount
+            )
             addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(binding.pantallaSmartSolarTablayout))
         }
     }
@@ -51,6 +54,7 @@ class PantallaPrincipalSmartSolar : AppCompatActivity() {
 
                 override fun onTabUnselected(tab: TabLayout.Tab?) {
                 }
+
                 override fun onTabReselected(tab: TabLayout.Tab?) {
                 }
             })

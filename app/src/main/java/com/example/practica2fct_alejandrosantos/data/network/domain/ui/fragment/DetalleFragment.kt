@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.PopupWindow
 import androidx.fragment.app.Fragment
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.databinding.FragmentDetalleBinding
@@ -15,14 +14,13 @@ import com.example.practica2fct_alejandrosantos.databinding.FragmentDetalleBindi
 
 class DetalleFragment : Fragment() {
     private lateinit var  binding: FragmentDetalleBinding
-    private var popupactivo : Boolean = false
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.fragmentDetalleImageButtonInformacion.setOnClickListener(){
-            //binding.fragmentDetalleImageButtonInformacion.setBackgroundResource(R.drawable.infoicon_azul_pressed)
-           mostrarPopup()
+        binding.fragmentDetalleImageButtonInformacion.setOnClickListener() {
+            binding.fragmentDetalleImageButtonInformacion.setBackgroundResource(R.drawable.infoicon_azul_pressed)
+            mostrarPopup()
         }
 
     }

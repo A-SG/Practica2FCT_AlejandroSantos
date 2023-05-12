@@ -4,13 +4,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.practica2fct_alejandrosantos.data.network.domain.GetFacturasUseCase
-import com.example.practicaprueba.data.network.domain.model.Factura
+import com.example.practica2fct_alejandrosantos.data.network.domain.model.Factura
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class FacturasViewModel @Inject constructor(private val getFacturasUseCase: GetFacturasUseCase): ViewModel()  {
+class FacturasViewModel @Inject constructor(private val getFacturasUseCase: GetFacturasUseCase) :
+    ViewModel() {
 
     //Variables
     private val _facturas = MutableLiveData<List<Factura>?>(emptyList())

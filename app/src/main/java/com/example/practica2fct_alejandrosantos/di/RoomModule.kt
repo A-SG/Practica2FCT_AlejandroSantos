@@ -1,4 +1,4 @@
-package com.example.practicaprueba.di
+package com.example.practica2fct_alejandrosantos.di
 
 import android.content.Context
 import androidx.room.Room

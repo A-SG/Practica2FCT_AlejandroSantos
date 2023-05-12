@@ -1,4 +1,4 @@
-package com.example.practicaprueba.di
+package com.example.practica2fct_alejandrosantos.di
 
 import co.infinum.retromock.Retromock
 import com.example.practica2fct_alejandrosantos.data.network.ApiService
