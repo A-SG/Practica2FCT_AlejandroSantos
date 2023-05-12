@@ -1,10 +1,7 @@
 package com.example.practica2fct_alejandrosantos.data.network.domain.ui.view
 
 import android.app.DatePickerDialog
-import android.content.Context
-import com.example.practica2fct_alejandrosantos.data.network.domain.ui.fragment.DatePickerFragment
 import android.content.Intent
-import android.location.GnssAntennaInfo.Listener
 import android.os.Bundle
 import android.util.Log
 import android.widget.DatePicker
@@ -16,7 +13,6 @@ import com.example.practicaprueba.data.network.domain.model.Factura
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.AndroidEntryPoint
-import java.sql.Timestamp
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
@@ -30,10 +26,12 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
     private val calendarfechaDesde = Calendar.getInstance()
     private val calendarfechHasta = Calendar.getInstance()
     private val formatter = SimpleDateFormat("dd MMMM yyyy")
-    private lateinit var  picker: DatePickerDialog
-    private lateinit var  pickerfin: DatePickerDialog
+    private lateinit var picker: DatePickerDialog
+    private lateinit var pickerfin: DatePickerDialog
     private val formatoFecha = SimpleDateFormat("dd/MM/yyyy")
-    private var numero: Int = 0
+    private var fecha: Int = 0
+    private var fechainicio: Int = 1
+    private var fechafin: Int = 2
 
 
     @Inject
@@ -59,22 +57,34 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         }
 
         binding.activitySecondCardviewFiltroFechaBtnFechaini.setOnClickListener() {
-            //mostrarDatepicker()
-            numero = 1
-            picker = DatePickerDialog(this,this, calendarfechaDesde.get(Calendar.YEAR), calendarfechaDesde.get(Calendar.MONTH) , calendarfechaDesde.get(Calendar.DAY_OF_MONTH))
-            picker.datePicker.maxDate = calendarfechaDesde.timeInMillis
+            fecha = fechainicio
+            picker = DatePickerDialog(
+                this,
+                this,
+                calendarfechaDesde.get(Calendar.YEAR),
+                calendarfechaDesde.get(Calendar.MONTH),
+                calendarfechaDesde.get(Calendar.DAY_OF_MONTH)
+            )
+            //picker.datePicker.maxDate = calendarfechaDesde.timeInMillis
             picker.show()
         }
 
         binding.activitySecondCardviewFiltroFechaBtnFechaFin.setOnClickListener() {
-            numero = 2
-            pickerfin = DatePickerDialog(this,this, calendarfechHasta.get(Calendar.YEAR), calendarfechHasta.get(Calendar.MONTH) , calendarfechHasta.get(Calendar.DAY_OF_MONTH))
-            if( binding.activitySecondCardviewFiltroFechaBtnFechaini.text != getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio)) {
-                val fecha = formatter.parse(binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString())
+            fecha = fechafin
+            pickerfin = DatePickerDialog(
+                this,
+                this,
+                calendarfechHasta.get(Calendar.YEAR),
+                calendarfechHasta.get(Calendar.MONTH),
+                calendarfechHasta.get(Calendar.DAY_OF_MONTH)
+            )
+            if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text != getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio)) {
+                val fecha =
+                    formatter.parse(binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString())
                 calendarfechHasta.timeInMillis = fecha.time
                 pickerfin.datePicker.minDate = calendarfechHasta.timeInMillis
                 pickerfin.show()
-            }else{
+            } else {
                 pickerfin.datePicker.minDate = calendarfechHasta.timeInMillis
                 pickerfin.show()
             }
@@ -94,7 +104,8 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         }
 
         binding.activitySecondCardviewFiltroImporteSlImporte.addOnChangeListener { slider, value, fromUser ->
-            binding.variacionImporte.text =getString(R.string.itemFacturas_simboloMoneda, ceil(value).toInt().toString())
+            binding.variacionImporte.text =
+                getString(R.string.itemFacturas_simboloMoneda, ceil(value).toInt().toString())
         }
 
 
@@ -112,33 +123,23 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
         jsonFiltroFacturasModel = intent.getStringExtra("listaFacturasSinFiltrar").toString()
         facturas = json.fromJson(jsonFiltroFacturasModel, object : TypeToken<List<Factura?>?>() {}.type)
-        val ordenPorImporte = facturas.sortedByDescending { facturas: Factura -> facturas.importeOrdenacion }
-        binding.tvImporteMaximo.text = getString(R.string.itemFacturas_simboloMoneda,ordenPorImporte.first().importeOrdenacion.toInt() + 1)
-        binding.activitySecondCardviewFiltroImporteSlImporte.valueTo = ceil(ordenPorImporte.first().importeOrdenacion).toFloat()
+        val ordenPorImporte =
+            facturas.sortedByDescending { facturas: Factura -> facturas.importeOrdenacion }
+        binding.tvImporteMaximo.text = getString(
+            R.string.itemFacturas_simboloMoneda,
+            ordenPorImporte.first().importeOrdenacion.toInt() + 1
+        )
+        binding.activitySecondCardviewFiltroImporteSlImporte.valueTo =
+            ceil(ordenPorImporte.first().importeOrdenacion).toFloat()
         binding.activitySecondCardviewFiltroImporteSlImporte.value = 0.0.toFloat()
-        binding.activitySecondCardviewFiltroImporteTvImporteMinimo.text = getString(R.string.itemFacturas_simboloMoneda, getString( R.string.activitySecond_cardviewFiltroImporte_tvImporteMinimo))
+        binding.activitySecondCardviewFiltroImporteTvImporteMinimo.text = getString(
+            R.string.itemFacturas_simboloMoneda,
+            getString(R.string.activitySecond_cardviewFiltroImporte_tvImporteMinimo)
+        )
 
         Log.d("listaparaspinner", facturas.toString())
     }
 
-    /*private fun mostrarDatepicker() {
-        val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year) }
-        datePicker.show(supportFragmentManager, "datePicker")
-    }
-
-    fun onDateSelected(day: Int, month: Int, year: Int) {
-        binding.activitySecondCardviewFiltroFechaBtnFechaini.text = "$day/$month/$year"
-    }
-
-    fun onDateSelectedEnd(day: Int, month: Int, year: Int) {
-        binding.activitySecondCardviewFiltroFechaBtnFechaFin.text = "$day/$month/$year"
-    }
-
-    private fun mostrarDatepickerFin() {
-        val datePicker =
-            DatePickerFragment { day, month, year -> onDateSelectedEnd(day, month, year) }
-        datePicker.show(supportFragmentManager, "datePicker")
-    }*/
 
     //Función de filtrado de facturas
     private fun getParametrosEntradaActividad(): List<Factura> {
@@ -163,22 +164,27 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
             //Filtrado `poer el estado de la factura
             if (binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked) {
-                pagadas = facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbpagadas)}
+                pagadas =
+                    facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbpagadas) }
             }
             if (binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked) {
-                anuladas = facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbanuladas)}
+                anuladas =
+                    facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbanuladas) }
             }
 
             if (binding.activitySecondCardviewFiltroEstadoCbcuotafija.isChecked) {
-                cuotaFija = facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbcuotafija)}
+                cuotaFija =
+                    facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbcuotafija) }
             }
 
             if (binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked) {
-                planPago = facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbplanDePago)}
+                planPago =
+                    facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbplanDePago) }
             }
 
             if (binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked) {
-                pendientesPago = facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbpendientesPago) }
+                pendientesPago =
+                    facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbpendientesPago) }
             }
 
             var listaPorEstado = pagadas + anuladas + planPago + cuotaFija + pendientesPago
@@ -190,35 +196,63 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             }
 
             //Filtrado de facturas por fecha de inicio y fecha de fin
-            if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() != getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() != getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio)  ){
-                firstDate = formatoFecha.parse(binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString())
-                secondDate = formatoFecha.parse(binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString())
+            if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() != getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() != getString(
+                    R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio
+                )
+            ) {
+                firstDate =
+                    formatter.parse(binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString())
+                secondDate =
+                    formatter.parse(binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString())
 
-                listaFiltrada = listaFiltrada.filter { factura: Factura -> formatoFecha.parse(factura.fecha) >= secondDate && formatoFecha.parse(factura.fecha) <= firstDate}
-            }
-            else  if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() != getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) ){
-                firstDate = formatoFecha.parse(binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString())
-                listaFiltrada = listaFiltrada.filter { factura: Factura -> formatoFecha.parse(factura.fecha) <= firstDate}
+                listaFiltrada = listaFiltrada.filter { factura: Factura ->
+                    formatoFecha.parse(factura.fecha) >= secondDate && formatoFecha.parse(factura.fecha) <= firstDate
+                }
+            } else if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() == getString(
+                    R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio
+                ) && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() != getString(
+                    R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio
+                )
+            ) {
+                firstDate =
+                    formatter.parse(binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString())
+                listaFiltrada =
+                    listaFiltrada.filter { factura: Factura -> formatoFecha.parse(factura.fecha) <= firstDate }
 
-            }else  if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() != getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio)  ){
+            } else if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() != getString(
+                    R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio
+                ) && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() == getString(
+                    R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio
+                )
+            ) {
 
-                secondDate = formatoFecha.parse(binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString())
-                listaFiltrada = listaFiltrada.filter { factura: Factura -> formatoFecha.parse(factura.fecha) >= secondDate }
-            }
-            else if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) )
+                secondDate =
+                    formatter.parse(binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString())
+                listaFiltrada =
+                    listaFiltrada.filter { factura: Factura -> formatoFecha.parse(factura.fecha) >= secondDate }
+            } else if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() == getString(
+                    R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio
+                ) && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString() == getString(
+                    R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio
+                )
+            )
 
             //Filtrado de factura por su importe
-            if (listaFiltrada.isEmpty()) {
-                listaFiltrada = facturas.filter { factura: Factura -> factura.importeOrdenacion <= binding.activitySecondCardviewFiltroImporteSlImporte.value.toDouble() }
-            } else {
-                if (binding.activitySecondCardviewFiltroImporteSlImporte.value != 0.0.toFloat()) {
-                    listaFiltrada = listaFiltrada.filter { factura: Factura -> factura.importeOrdenacion <= binding.activitySecondCardviewFiltroImporteSlImporte.value.toDouble() }
+                if (listaFiltrada.isEmpty()) {
+                    listaFiltrada =
+                        facturas.filter { factura: Factura -> factura.importeOrdenacion <= binding.activitySecondCardviewFiltroImporteSlImporte.value.toDouble() }
+                } else {
+                    if (binding.activitySecondCardviewFiltroImporteSlImporte.value != 0.0.toFloat()) {
+                        listaFiltrada =
+                            listaFiltrada.filter { factura: Factura -> factura.importeOrdenacion <= binding.activitySecondCardviewFiltroImporteSlImporte.value.toDouble() }
+                    }
                 }
-            }
         }
 
         //Si no se realiza ningunfiltro sobre la lista, devolverá la misma lista cargada al principio
-        if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio)  && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio)  && binding.activitySecondCardviewFiltroImporteSlImporte.value == 0.0.toFloat() &&
+        if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text == getString(R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio) && binding.activitySecondCardviewFiltroFechaBtnFechaFin.text == getString(
+                R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio
+            ) && binding.activitySecondCardviewFiltroImporteSlImporte.value == 0.0.toFloat() &&
             !binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked && !binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked && !binding.activitySecondCardviewFiltroEstadoCbcuotafija.isChecked && !binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked && !binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked
         ) {
             listaFiltrada = facturas
@@ -227,22 +261,22 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
     }
 
     override fun onDateSet(p0: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        if (numero == 1)
-        {
-            calendarfechaDesde.set(year,month,dayOfMonth)
+        if (fecha == fechainicio) {
+            calendarfechaDesde.set(year, month, dayOfMonth)
             mostrarFechaFormateada(calendarfechaDesde.timeInMillis)
-        }else if(numero == 2){
-            calendarfechaDesde.set(year,month,dayOfMonth)
+        } else if (fecha == fechafin) {
+            calendarfechHasta.set(year, month, dayOfMonth)
             mostrarFechaFormateadaFin(calendarfechHasta.timeInMillis)
         }
-
-
     }
 
-    private fun mostrarFechaFormateada(timestamp: Long){
+    private fun mostrarFechaFormateada(timestamp: Long) {
         binding.activitySecondCardviewFiltroFechaBtnFechaini.text = formatter.format(timestamp)
+        binding.activitySecondCardviewFiltroFechaBtnFechaini.setTextColor(resources.getColor(R.color.black))
     }
-    private fun mostrarFechaFormateadaFin(timestamp: Long){
+
+    private fun mostrarFechaFormateadaFin(timestamp: Long) {
         binding.activitySecondCardviewFiltroFechaBtnFechaFin.text = formatter.format(timestamp)
+        binding.activitySecondCardviewFiltroFechaBtnFechaFin.setTextColor(resources.getColor(R.color.black))
     }
 }
