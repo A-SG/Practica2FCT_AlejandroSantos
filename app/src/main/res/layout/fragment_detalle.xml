@@ -6,137 +6,156 @@
     android:layout_height="wrap_content"
     tools:context=".data.network.domain.ui.fragment.DetalleFragment">
 
-
-    <TextView
-        android:id="@+id/fragment_Detalle_tvCodigoAutoconsumo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
-        android:text="@string/fragment.Detalle.tvCodigoAutoconsumo"
-        android:textSize="11sp"
-        app:layout_constraintStart_toStartOf="@+id/fragmentDetalle.etCAU"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/fragmentDetalle.etCAU"
-        android:layout_width="366dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginBottom="19dp"
-        android:inputType="text"
-        android:labelFor="@+id/fragment_Detalle_tvCodigoAutoconsumo"
-        app:layout_constraintBottom_toTopOf="@+id/fragmentDetalle.tvEstadoSolicitudAlta"
-        app:layout_constraintEnd_toEndOf="@+id/fragmentDetalle.tvEstadoSolicitudAlta"
-        app:layout_constraintStart_toEndOf="@+id/fragmentDetalle.tvEstadoSolicitudAlta"
-        app:layout_constraintTop_toTopOf="@+id/fragment_Detalle_tvCodigoAutoconsumo" />
-
-    <TextView
-        android:id="@+id/fragmentDetalle.tvEstadoSolicitudAlta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="147dp"
-        android:text="@string/fragment.Detalle.tvEstadoSolicitudAlta"
-        android:textSize="11sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/fragmentDetalle.etEstadoSolicitudAlta"
-        android:layout_width="366dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="31dp"
-        android:inputType="text"
-        android:labelFor="@+id/fragmentDetalle.tvEstadoSolicitudAlta"
-        app:layout_constraintBottom_toTopOf="@+id/fragmentDetalle.tvtipoAutoconsumo"
-        app:layout_constraintEnd_toEndOf="@+id/fragmentDetalle.tvEstadoSolicitudAlta"
-        app:layout_constraintStart_toEndOf="@+id/fragmentDetalle.tvEstadoSolicitudAlta"
-        app:layout_constraintTop_toTopOf="@+id/fragmentDetalle.imageButton.informacion" />
-
-    <TextView
-        android:id="@+id/fragmentDetalle.tvtipoAutoconsumo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/fragment.Detalle.tvTipoAutoconsumo"
-        android:textSize="11sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/fragmentDetalle.etTipoAutoconsumo"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/fragmentDetalle.etTipoAutoconsumo"
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="26dp"
-        android:inputType="text"
-        android:labelFor="@+id/fragmentDetalle.tvtipoAutoconsumo"
-        app:layout_constraintBottom_toTopOf="@+id/tvCompensacionExedente"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fragmentDetalle.tvtipoAutoconsumo" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338">
 
-    <TextView
-        android:id="@+id/tvCompensacionExedente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="133dp"
-        android:text="@string/fragment.Detalle.tvCompensaciónExedentes"
-        android:textSize="11sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/fragmentDetalle.etCompensacionExedentes" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/fragmentDetalle.etCompensacionExedentes"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="86dp"
-        android:inputType="text"
-        android:labelFor="@+id/tvCompensacionExedente"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fragmentDetalle.etTipoAutoconsumo" />
+            <TextView
+                android:id="@+id/fragment_Detalle_tvCodigoAutoconsumo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="61dp"
+                android:text="@string/fragment.Detalle.tvCodigoAutoconsumo"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="@+id/fragmentDetalle.etCAU"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/fragmentDetalle.tvPotenciaInstalacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="48dp"
-        android:text="@string/fragment.Detalle.tvPotenciaInstalación"
-        android:textSize="11sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/fragmnetDetalle.etPotenciaInstalacion" />
+            <EditText
+                android:id="@+id/fragmentDetalle.etCAU"
+                android:layout_width="366dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="19dp"
+                android:inputType="text"
+                android:labelFor="@+id/fragment_Detalle_tvCodigoAutoconsumo"
+                app:layout_constraintBottom_toTopOf="@+id/fragmentDetalle.tvEstadoSolicitudAlta"
+                app:layout_constraintEnd_toEndOf="@+id/fragmentDetalle.tvEstadoSolicitudAlta"
+                app:layout_constraintStart_toEndOf="@+id/fragmentDetalle.tvEstadoSolicitudAlta"
+                app:layout_constraintTop_toTopOf="@+id/fragment_Detalle_tvCodigoAutoconsumo" />
 
-    <EditText
-        android:id="@+id/fragmnetDetalle.etPotenciaInstalacion"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginEnd="22dp"
-        android:inputType="text"
-        android:labelFor="@+id/fragmentDetalle.tvPotenciaInstalacion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentDetalle.tvPotenciaInstalacion" />
+            <TextView
+                android:id="@+id/fragmentDetalle.tvEstadoSolicitudAlta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="147dp"
+                android:text="@string/fragment.Detalle.tvEstadoSolicitudAlta"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/fragmentDetalle.imageButton.informacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="37dp"
-        android:background="@color/white"
-        android:src="@drawable/infoicon_azul"
-        app:layout_constraintEnd_toEndOf="@+id/fragmentDetalle.etEstadoSolicitudAlta"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentDetalle.etCAU" />
+            <EditText
+                android:id="@+id/fragmentDetalle.etEstadoSolicitudAlta"
+                android:layout_width="366dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="31dp"
+                android:inputType="text"
+                android:labelFor="@+id/fragmentDetalle.tvEstadoSolicitudAlta"
+                app:layout_constraintBottom_toTopOf="@+id/fragmentDetalle.tvtipoAutoconsumo"
+                app:layout_constraintEnd_toEndOf="@+id/fragmentDetalle.tvEstadoSolicitudAlta"
+                app:layout_constraintStart_toEndOf="@+id/fragmentDetalle.tvEstadoSolicitudAlta"
+                app:layout_constraintTop_toTopOf="@+id/fragmentDetalle.imageButton.informacion" />
+
+            <TextView
+                android:id="@+id/fragmentDetalle.tvtipoAutoconsumo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fragment.Detalle.tvTipoAutoconsumo"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/fragmentDetalle.etTipoAutoconsumo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/fragmentDetalle.etTipoAutoconsumo"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="22dp"
+                android:layout_marginBottom="26dp"
+                android:inputType="text"
+                android:labelFor="@+id/fragmentDetalle.tvtipoAutoconsumo"
+                app:layout_constraintBottom_toTopOf="@+id/tvCompensacionExedente"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/fragmentDetalle.tvtipoAutoconsumo" />
+
+            <TextView
+                android:id="@+id/tvCompensacionExedente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="133dp"
+                android:text="@string/fragment.Detalle.tvCompensaciónExedentes"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/fragmentDetalle.etCompensacionExedentes" />
+
+            <EditText
+                android:id="@+id/fragmentDetalle.etCompensacionExedentes"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="88dp"
+                android:layout_marginEnd="22dp"
+                android:layout_marginBottom="86dp"
+                android:inputType="text"
+                android:labelFor="@+id/tvCompensacionExedente"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/fragmentDetalle.etTipoAutoconsumo" />
+
+            <TextView
+                android:id="@+id/fragmentDetalle.tvPotenciaInstalacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="48dp"
+                android:text="@string/fragment.Detalle.tvPotenciaInstalación"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/fragmnetDetalle.etPotenciaInstalacion" />
+
+            <EditText
+                android:id="@+id/fragmnetDetalle.etPotenciaInstalacion"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginEnd="22dp"
+                android:inputType="text"
+                android:labelFor="@+id/fragmentDetalle.tvPotenciaInstalacion"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragmentDetalle.tvPotenciaInstalacion" />
+
+            <ImageButton
+                android:id="@+id/fragmentDetalle.imageButton.informacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="37dp"
+                android:background="@color/white"
+                android:src="@drawable/infoicon_azul"
+                app:layout_constraintEnd_toEndOf="@+id/fragmentDetalle.etEstadoSolicitudAlta"
+                app:layout_constraintTop_toBottomOf="@+id/fragmentDetalle.etCAU" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
