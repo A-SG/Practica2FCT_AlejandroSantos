@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.CheckBox
 import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
 import com.example.practica2fct_alejandrosantos.R
@@ -31,9 +32,17 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
     private lateinit var pickerfin: DatePickerDialog
     private val formatoFecha = SimpleDateFormat("dd/MM/yyyy")
     private var fecha: Int = 0
-    private var fechainicio: Int = 1
-    private var fechafin: Int = 2
+    private var fechaMin: Int = 1
+    private var fechaMax: Int = 2
 
+    private lateinit var valorFechaInicio: Date
+    private lateinit var valorFechaFin: Date
+    private var valorSpinner: Float = 0F
+    private var estadoCheckBoxPagadas: Boolean = false
+    private var estadoCheckBoxAnuladas: Boolean = false
+    private var estadoCheckBoxCuotaFija: Boolean = false
+    private var estadoCheckBoxPlandePago: Boolean = false
+    private var estadoCheckBoxPendientes: Boolean = false
 
     @Inject
     lateinit var facturaRepository: FacturaRepository
@@ -53,12 +62,29 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         baseContext.createConfigurationContext(config)
 
 
+        binding.activitySecondCardviewFiltroFechaBtnFechaini.text =
+            intent.getStringExtra("fechaInicio")
+        binding.activitySecondCardviewFiltroFechaBtnFechaFin.text =
+            intent.getStringExtra("fechaFin")
+        binding.activitySecondCardviewFiltroImporteSlImporte.value =
+            intent.getFloatExtra("valorSlider", 0F)
+        binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked =
+            intent.getBooleanExtra("checkboxPagadas", false)
+        binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked =
+            intent.getBooleanExtra("checkboxAnuladas", false)
+        binding.activitySecondCardviewFiltroEstadoCbcuotafija.isChecked =
+            intent.getBooleanExtra("checkboxCuotaFija", false)
+        binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked =
+            intent.getBooleanExtra("checkboxPlanPago", false)
+        binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked =
+            intent.getBooleanExtra("checkboxPendientes", false)
+
         binding.activitySecondToolbarImgBtnSalir.setOnClickListener() {
             finish()
         }
 
         binding.activitySecondCardviewFiltroFechaBtnFechaini.setOnClickListener() {
-            fecha = fechainicio
+            fecha = fechaMin
             picker = DatePickerDialog(
                 this,
                 this,
@@ -71,7 +97,7 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         }
 
         binding.activitySecondCardviewFiltroFechaBtnFechaFin.setOnClickListener() {
-            fecha = fechafin
+            fecha = fechaMax
             pickerfin = DatePickerDialog(
                 this,
                 this,
@@ -118,21 +144,31 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             listaFacturas = json.toJson(getParametrosEntradaActividad())
             Log.d("ListaFiltradaParaIntent", listaFacturas)
             resultIntent.putExtra("ListaFiltrada", listaFacturas)
+            resultIntent.putExtra("fechaInicio", binding.activitySecondCardviewFiltroFechaBtnFechaini.text)
+            resultIntent.putExtra("fechaFin", binding.activitySecondCardviewFiltroFechaBtnFechaFin.text)
+            resultIntent.putExtra("valorSlider", binding.activitySecondCardviewFiltroImporteSlImporte.value)
+            resultIntent.putExtra("checkboxPagadas", binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked)
+            resultIntent.putExtra("checkboxAnuladas", binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked)
+            resultIntent.putExtra("checkboxCuotaFija", binding.activitySecondCardviewFiltroEstadoCbcuotafija.isChecked)
+            resultIntent.putExtra("checkboxPlanPago", binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked)
+            resultIntent.putExtra("checkboxPendientes", binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked)
             setResult(RESULT_OK, resultIntent)
             finish()
         }
 
         jsonFiltroFacturasModel = intent.getStringExtra("listaFacturasSinFiltrar").toString()
-        facturas = json.fromJson(jsonFiltroFacturasModel, object : TypeToken<List<Factura?>?>() {}.type)
+        facturas =
+            json.fromJson(jsonFiltroFacturasModel, object : TypeToken<List<Factura?>?>() {}.type)
         val ordenPorImporte =
             facturas.sortedByDescending { facturas: Factura -> facturas.importeOrdenacion }
         binding.tvImporteMaximo.text = getString(
             R.string.itemFacturas_simboloMoneda,
             ordenPorImporte.first().importeOrdenacion.toInt() + 1
         )
+        binding.variacionImporte.text = intent.getFloatExtra("valorSlider", 0F).toInt().toString()
         binding.activitySecondCardviewFiltroImporteSlImporte.valueTo =
             ceil(ordenPorImporte.first().importeOrdenacion).toFloat()
-        binding.activitySecondCardviewFiltroImporteSlImporte.value = 0.0.toFloat()
+        // binding.activitySecondCardviewFiltroImporteSlImporte.value = valorSpinner
         binding.activitySecondCardviewFiltroImporteTvImporteMinimo.text = getString(
             R.string.itemFacturas_simboloMoneda,
             getString(R.string.activitySecond_cardviewFiltroImporte_tvImporteMinimo)
@@ -167,15 +203,18 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             if (binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked) {
                 pagadas =
                     facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbpagadas) }
+
             }
             if (binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked) {
                 anuladas =
                     facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbanuladas) }
+
             }
 
             if (binding.activitySecondCardviewFiltroEstadoCbcuotafija.isChecked) {
                 cuotaFija =
                     facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbcuotafija) }
+
             }
 
             if (binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked) {
@@ -207,7 +246,7 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
                     formatter.parse(binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString())
 
                 listaFiltrada = listaFiltrada.filter { factura: Factura ->
-                    formatoFecha.parse(factura.fecha) >= secondDate && formatoFecha.parse(factura.fecha) <= firstDate
+                    formatoFecha.parse(factura.fecha)!! in secondDate..firstDate
                 }
             } else if (binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString() == getString(
                     R.string.activitySecond_cardviewFiltroFecha_textoBtnFechaInicio
@@ -262,10 +301,10 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
     }
 
     override fun onDateSet(p0: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        if (fecha == fechainicio) {
+        if (fecha == fechaMin) {
             calendarfechaDesde.set(year, month, dayOfMonth)
             mostrarFechaFormateada(calendarfechaDesde.timeInMillis)
-        } else if (fecha == fechafin) {
+        } else if (fecha == fechaMax) {
             calendarfechHasta.set(year, month, dayOfMonth)
             mostrarFechaFormateadaFin(calendarfechHasta.timeInMillis)
         }
