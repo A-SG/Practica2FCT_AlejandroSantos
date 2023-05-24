@@ -83,5 +83,13 @@
     <string name="login.textoBotonEntrar">Entrar</string>
     <string name="login.tvTambienPuedes">Tambien Puedes</string>
     <string name="login.textoBotonRegistrarse">Registrarse</string>
+    <string name="login.edUsuario.hint">Usuario</string>
+    <string name="login.edContrasenia.hint">Contraseña</string>
+
+    <!--Rcursos para la vista Registrarse-->
+    <string name="registrarse.textoBotonRegistrarse">Registrarse</string>
+    <string name="registrarse.edUsuario.hint">Usuario</string>
+    <string name="registrarse.edContrasenia.hint">Contraseña</string>
+
 
 </resources>
