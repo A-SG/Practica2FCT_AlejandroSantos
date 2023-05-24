@@ -24,6 +24,9 @@ import kotlin.math.ceil
 @AndroidEntryPoint
 class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
+    @Inject
+    lateinit var facturaRepository: FacturaRepository
+
     private lateinit var binding: ActivitySecondBinding
     private val calendarfechaDesde = Calendar.getInstance()
     private val calendarfechHasta = Calendar.getInstance()
@@ -34,18 +37,6 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
     private var fecha: Int = 0
     private var fechaMin: Int = 1
     private var fechaMax: Int = 2
-
-    private lateinit var valorFechaInicio: Date
-    private lateinit var valorFechaFin: Date
-    private var valorSpinner: Float = 0F
-    private var estadoCheckBoxPagadas: Boolean = false
-    private var estadoCheckBoxAnuladas: Boolean = false
-    private var estadoCheckBoxCuotaFija: Boolean = false
-    private var estadoCheckBoxPlandePago: Boolean = false
-    private var estadoCheckBoxPendientes: Boolean = false
-
-    @Inject
-    lateinit var facturaRepository: FacturaRepository
     private lateinit var facturas: List<Factura>
     private lateinit var jsonFiltroFacturasModel: String
     private var json: Gson = Gson()
@@ -201,30 +192,25 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
             //Filtrado `poer el estado de la factura
             if (binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked) {
-                pagadas =
-                    facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbpagadas) }
+                pagadas = facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbpagadas) }
 
             }
             if (binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked) {
-                anuladas =
-                    facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbanuladas) }
+                anuladas = facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbanuladas) }
 
             }
 
             if (binding.activitySecondCardviewFiltroEstadoCbcuotafija.isChecked) {
-                cuotaFija =
-                    facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbcuotafija) }
+                cuotaFija = facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbcuotafija) }
 
             }
 
             if (binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked) {
-                planPago =
-                    facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbplanDePago) }
+                planPago = facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbplanDePago) }
             }
 
             if (binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked) {
-                pendientesPago =
-                    facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbpendientesPago) }
+                pendientesPago = facturas.filter { factura: Factura -> factura.descEstado == getString(R.string.activitySecond_cardviewFiltroEstado_cbpendientesPago) }
             }
 
             var listaPorEstado = pagadas + anuladas + planPago + cuotaFija + pendientesPago

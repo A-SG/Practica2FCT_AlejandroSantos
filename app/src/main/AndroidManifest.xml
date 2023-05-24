@@ -15,9 +15,12 @@
         android:theme="@style/Theme.Practica2FCT_AlejandroSAntos"
         tools:targetApi="31">
         <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
             android:name=".data.network.domain.ui.view.PantallaPrincipalSmartSolar"
             android:exported="false"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".data.network.domain.ui.view.PantallaInicio"
             android:exported="true"
@@ -31,10 +34,10 @@
         <activity
             android:name=".data.network.domain.ui.view.MainActivity"
             android:exported="false"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".data.network.domain.ui.view.SecondActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>

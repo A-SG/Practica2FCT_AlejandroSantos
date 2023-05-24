@@ -10,4 +10,6 @@
     <color name="green">#79BC2C</color>
     <color name="red">#F81606</color>
     <color name="gris">#D1CECE</color>
+    <color name="gris_oscuro">#6C6C6C</color>
+    <color name="transparente">00ffffff</color>
 </resources>
