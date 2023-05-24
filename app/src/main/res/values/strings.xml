@@ -72,9 +72,16 @@
     <string name="pantallaPrincipalSmartSolar.nombretab3">Detalle</string>
 
 
-    <!--Recursospara la la vista pop-up perteneciente al fragmento detalle-->
+    <!--Recursos para la vista pop-up perteneciente al fragmento detalle-->
     <string name="popup_fragmentodetalle.titulopopup">Estado solicitud autoconsumo</string>
     <string name="popup_fragmentodetalle.cuerpopopup">El tiempo estimado de activación de tu autoconsumo es de 1 a 2 meses, éste variará en función de tu comunidad autónoma y distibuidora</string>
     <string name="popup_fragmentodetalle.textoboton">Aceptar</string>
+
+    <!--Rcursos para la vista Login-->
+    <string name="login.cbRecordarContrasenia.Texto"> Recordar Contraseña</string>
+    <string name="login.tvOlvidarDatos"><u>He olvidado mis datos</u></string>
+    <string name="login.textoBotonEntrar">Entrar</string>
+    <string name="login.tvTambienPuedes">Tambien Puedes</string>
+    <string name="login.textoBotonRegistrarse">Registrarse</string>
 
 </resources>

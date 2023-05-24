@@ -7,21 +7,101 @@
     tools:context=".data.network.domain.ui.view.Login">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="326dp"
+        android:id="@+id/login.etUsuario"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="36dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="310dp" />
+        android:tooltipText="Usuario"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="326dp"
+        android:id="@+id/login.etContrasenia"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
         android:ems="10"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="391dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="174dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="145dp"
+        app:layout_constraintBottom_toTopOf="@+id/login.etUsuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_logo_iberdrola_cli" />
+
+    <CheckBox
+        android:id="@+id/login.cbRecordarContrasenia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login.cbRecordarContrasenia.Texto"
+        app:layout_constraintBottom_toTopOf="@+id/login.tvDatosOlvidados"
+        app:layout_constraintStart_toStartOf="@+id/login.etContrasenia"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/login.tvDatosOlvidados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="155dp"
+        android:text="@string/login.tvOlvidarDatos"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/login.btnEntrar"
+        app:layout_constraintStart_toStartOf="@+id/login.cbRecordarContrasenia"
+        app:layout_constraintTop_toBottomOf="@+id/login.cbRecordarContrasenia" />
+
+    <Button
+        android:id="@+id/login.btnEntrar"
+        android:layout_width="252dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/borde_botones"
+        android:text="@string/login.textoBotonEntrar"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/login.btnRegistrarse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login.tvDatosOlvidados" />
+
+    <Button
+        android:id="@+id/login.btnRegistrarse"
+        android:layout_width="251dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="38dp"
+        android:background="@drawable/borde_boton_blanco"
+        android:text="@string/login.textoBotonRegistrarse"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login.btnEntrar" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="21dp"
+        app:layout_constraintBottom_toTopOf="@+id/login.cbRecordarContrasenia"
+        app:layout_constraintEnd_toEndOf="@+id/login.etContrasenia"
+        app:layout_constraintTop_toBottomOf="@+id/login.etUsuario"
+        app:srcCompat="@drawable/ic_ojo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
