@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".data.network.domain.ui.view.Login">
 
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginRight="10dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.846" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login.textinputlayout.usuario"
         android:layout_width="0dp"
@@ -52,10 +64,10 @@
 
     <ImageView
         android:id="@+id/login.imgview.Iberdrola"
-        android:layout_width="174dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="114dp"
+        android:layout_width="178dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginBottom="81dp"
         app:layout_constraintBottom_toTopOf="@+id/login.textinputlayout.usuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,9 +79,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginBottom="2dp"
+
+        android:layout_marginBottom="228dp"
         android:text="@string/login.cbRecordarContrasenia.Texto"
-        app:layout_constraintBottom_toTopOf="@+id/login.tvDatosOlvidados"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login.textinputlayout.contrasena" />
 
@@ -77,43 +90,71 @@
         android:id="@+id/login.tvDatosOlvidados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="156dp"
         android:text="@string/login.tvOlvidarDatos"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/login.btnEntrar"
-        app:layout_constraintStart_toStartOf="@+id/login.cbRecordarContrasenia"
-        app:layout_constraintTop_toBottomOf="@+id/login.cbRecordarContrasenia" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.566" />
 
     <Button
         android:id="@+id/login.btnEntrar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="30dp"
+        android:layout_width="259dp"
+        android:layout_height="40dp"
         android:background="@drawable/borde_botones"
         android:text="@string/login.textoBotonEntrar"
         android:textAllCaps="false"
+        android:textColor="#FFFFFF"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/login.btnRegistrarse"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.565"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login.tvDatosOlvidados" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.783" />
 
     <Button
         android:id="@+id/login.btnRegistrarse"
+        style="@style/boton_login_registrate"
         android:layout_width="251dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="38dp"
+        android:layout_height="40dp"
         android:background="@drawable/borde_boton_blanco"
         android:text="@string/login.textoBotonRegistrarse"
         android:textAllCaps="false"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.587"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login.btnEntrar" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.942" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="115dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="15dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.845" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="114dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="153dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="103dp"
+        android:text="@string/login.tvTambienPuedes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/divider2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login.cbRecordarContrasenia" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
