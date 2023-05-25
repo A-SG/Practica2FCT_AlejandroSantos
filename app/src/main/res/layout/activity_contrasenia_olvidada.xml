@@ -6,4 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".data.network.domain.ui.view.ContraseniaOlvidada">
 
+
+    <TextView
+        android:id="@+id/contrasenaOlvidada.tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/contraseñaolvidada.textoInformativo"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/contrasenaOlvidada.edEmail"
+        app:layout_constraintStart_toStartOf="@+id/contrasenaOlvidada.edEmail"
+        app:layout_constraintTop_toBottomOf="@+id/contrasenaOlvidada.imgviewIberdrola" />
+
+    <EditText
+        android:id="@+id/contrasenaOlvidada.edEmail"
+        android:layout_width="344dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="39dp"
+        android:textStyle="bold"
+        android:tooltipText="Email"
+        app:layout_constraintBottom_toTopOf="@+id/contrasenaOlvidada.btnEnviar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contrasenaOlvidada.tv" />
+
+    <ImageView
+        android:id="@+id/contrasenaOlvidada.imgviewIberdrola"
+        android:layout_width="211dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="68dp"
+        app:layout_constraintBottom_toTopOf="@+id/contrasenaOlvidada.tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_logo_iberdrola_cli" />
+
+    <Button
+        android:id="@+id/contrasenaOlvidada.btnEnviar"
+        android:layout_width="176dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="445dp"
+        android:background="@drawable/borde_botones"
+        android:text="@string/contraseñaolvidada.btnTexto"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contrasenaOlvidada.edEmail" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

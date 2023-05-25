@@ -30,7 +30,9 @@ class Login : AppCompatActivity() {
         }
 
         binding.loginTvDatosOlvidados.setOnClickListener {
-            FirebaseAuth.getInstance().sendPasswordResetEmail(binding.loginEtUsuario.text.toString())
+           // FirebaseAuth.getInstance().sendPasswordResetEmail(binding.loginEtUsuario.text.toString())
+            val intent = Intent(this, ContraseniaOlvidada::class.java)
+            startActivity(intent)
         }
 
         binding.loginBtnRegistrarse.setOnClickListener {

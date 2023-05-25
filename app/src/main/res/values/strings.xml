@@ -91,5 +91,11 @@
     <string name="registrarse.edUsuario.hint">Usuario</string>
     <string name="registrarse.edContrasenia.hint">Contraseña</string>
 
+    <!--Recursos para la vista de contraseña olvidada-->
+    <string name="contraseñaolvidada.textoInformativo">Introduzca su Email para poder cambiar su contraseña:</string>
+    <string name="contraseñaolvidada.etEmail">Email</string>
+    <string name="contraseñaolvidada.btnTexto">Enviar</string>
+
+
 
 </resources>

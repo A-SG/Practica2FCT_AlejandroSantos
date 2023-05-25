@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Practica2FCT_AlejandroSAntos"
         tools:targetApi="31">
         <activity
-            android:name=".ContraseniaOlvidada"
+            android:name=".data.network.domain.ui.view.ContraseniaOlvidada"
             android:exported="false" />
         <activity
             android:name=".data.network.domain.ui.view.Registro"
