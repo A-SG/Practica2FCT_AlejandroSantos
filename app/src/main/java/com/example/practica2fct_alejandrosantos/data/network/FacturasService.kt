@@ -11,7 +11,11 @@ class FacturasService @Inject constructor(private val api : ApiService, private 
     suspend fun getFacturas() : NumFactura {
         return withContext(Dispatchers.IO){
             val response = try {
-                api.getFacturas()
+                if (api.getFacturas().isSuccessful){
+                    api.getFacturas()
+                } else {
+                    mock.getFactura()
+                }
             } catch (e : Exception){
                 mock.getFactura()
             }

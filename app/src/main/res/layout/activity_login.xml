@@ -10,10 +10,10 @@
         android:id="@+id/login.textinputlayout.usuario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
+        android:layout_marginBottom="12dp"
         android:hint="@string/login.edUsuario.hint"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintBottom_toTopOf="@+id/login.textinputlayout.contrasena"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login.imgview.Iberdrola">
@@ -36,12 +36,14 @@
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/login.cbRecordarContrasenia"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login.textinputlayout.usuario"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login.etContrasena"
             android:layout_width="match_parent"
-            android:layout_height="37dp"
+            android:layout_height="wrap_content"
             android:inputType="textPassword"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="308dp" />
@@ -51,7 +53,7 @@
     <ImageView
         android:id="@+id/login.imgview.Iberdrola"
         android:layout_width="174dp"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:layout_marginTop="35dp"
         android:layout_marginBottom="114dp"
         app:layout_constraintBottom_toTopOf="@+id/login.textinputlayout.usuario"
@@ -69,13 +71,13 @@
         android:text="@string/login.cbRecordarContrasenia.Texto"
         app:layout_constraintBottom_toTopOf="@+id/login.tvDatosOlvidados"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/login.textinputlayout.contrasena" />
 
     <TextView
         android:id="@+id/login.tvDatosOlvidados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="155dp"
+        android:layout_marginBottom="156dp"
         android:text="@string/login.tvOlvidarDatos"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -85,8 +87,10 @@
 
     <Button
         android:id="@+id/login.btnEntrar"
-        android:layout_width="258dp"
-        android:layout_height="44dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginEnd="76dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/borde_botones"
         android:text="@string/login.textoBotonEntrar"
@@ -110,17 +114,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login.btnEntrar" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="19dp"
-        app:layout_constraintBottom_toTopOf="@+id/login.cbRecordarContrasenia"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login.textinputlayout.usuario"
-        app:srcCompat="@drawable/ic_ojo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
