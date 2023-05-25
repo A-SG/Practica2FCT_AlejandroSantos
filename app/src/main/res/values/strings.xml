@@ -85,16 +85,22 @@
     <string name="login.textoBotonRegistrarse">Registrarse</string>
     <string name="login.edUsuario.hint">Usuario</string>
     <string name="login.edContrasenia.hint">Contraseña</string>
+    <string name="login.toast.noPosibleRegistro">No es posible el registro de sesión</string>
+    <string name="login.toast.camposUsuarioContraseñaVacios">Por favor, introduzca la el usuario y la contraseña</string>
 
     <!--Rcursos para la vista Registrarse-->
-    <string name="registrarse.textoBotonRegistrarse">Registrarse</string>
-    <string name="registrarse.edUsuario.hint">Usuario</string>
-    <string name="registrarse.edContrasenia.hint">Contraseña</string>
+    <string name="registro.textoBotonRegistrarse">Registrarse</string>
+    <string name="registro.edUsuario.hint">Usuario</string>
+    <string name="registro.edContrasenia.hint">Contraseña</string>
+    <string name="registro.toast.formatoContraseña">La contraseña debe de tener 6 caracteres como mínimo</string>
+    <string name="registro.toast.errorRegistro">Error al crear el usuario, compruebe el formato de su correo, o si ya se ha utilizado dicha cuenta con anterioridad</string>
+    <string name="registro.toast.errorRegistroDefecto">Error, no es posible el registro</string>
 
     <!--Recursos para la vista de contraseña olvidada-->
     <string name="contraseñaolvidada.textoInformativo">Introduzca su Email para poder cambiar su contraseña:</string>
     <string name="contraseñaolvidada.etEmail">Email</string>
     <string name="contraseñaolvidada.btnTexto">Enviar</string>
+    <string name="contraseñaolvidada.toast.usuarioExistente">El usuario no existe, revise el Email Introducido</string>
 
 
 

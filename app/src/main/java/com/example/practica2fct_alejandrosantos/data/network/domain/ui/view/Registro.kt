@@ -3,18 +3,23 @@ package com.example.practica2fct_alejandrosantos.data.network.domain.ui.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.databinding.ActivityRegistroBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import kotlinx.coroutines.handleCoroutineException
 
 
 class Registro : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegistroBinding
+    private  var excecepcion : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,15 +44,20 @@ class Registro : AppCompatActivity() {
             } catch (e: FirebaseAuthWeakPasswordException) {
                 Toast.makeText(
                     this,
-                    "La contraseña debe de tener 6 caracteres como mínimo",
-                    Toast.LENGTH_SHORT
+                    getString(R.string.registro_toast_formatoContraseña),
+                    Toast.LENGTH_LONG
                 ).show()
             } catch (e: FirebaseAuthInvalidCredentialsException) {
-                Toast.makeText(this, "El correo no es válido", Toast.LENGTH_SHORT).show()
+
             } catch (e: FirebaseAuthUserCollisionException) {
-                Toast.makeText(this, "El usuario introducido ya existe", Toast.LENGTH_SHORT).show()
+
             } catch (e: Exception) {
-                Toast.makeText(this, "Error al crear el usuario", Toast.LENGTH_SHORT).show()
+                excecepcion = 3
+            }
+
+            when (excecepcion) {
+                3 -> Toast.makeText(this, getString(R.string.registro_toast_errorRegistro), Toast.LENGTH_LONG).show()
+                else -> getString(R.string.registro_toast_errorRegistroDefecto)
             }
         }
     }

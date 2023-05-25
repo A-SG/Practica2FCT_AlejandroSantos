@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.databinding.ActivityContraseniaOlvidadaBinding
-import com.example.practica2fct_alejandrosantos.databinding.ActivityLoginBinding
-import com.example.practica2fct_alejandrosantos.databinding.ActivityRegistroBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class ContraseniaOlvidada : AppCompatActivity() {
@@ -24,8 +22,8 @@ class ContraseniaOlvidada : AppCompatActivity() {
                     FirebaseAuth.getInstance().sendPasswordResetEmail(binding.contrasenaOlvidadaEdEmail.text.toString()).addOnFailureListener {
                         Toast.makeText(
                             this,
-                            "El usuario no existe, revise el Email Introducido",
-                            Toast.LENGTH_SHORT
+                            getString(R.string.contraseñaolvidada_toast_usuarioExistente),
+                            Toast.LENGTH_LONG
                         ).show()
                     }
                 }
