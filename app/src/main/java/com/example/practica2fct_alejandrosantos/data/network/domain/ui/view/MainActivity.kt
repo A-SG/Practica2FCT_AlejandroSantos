@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: FacturasAdapter
     private val facturasViewModel: FacturasViewModel by viewModels()
-    private var pulsaciones = 0
     private lateinit var listadoFiltraFactura: String
     private val gson = Gson()
     @Inject
@@ -57,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             val jsonFiltroFacturasModel = activityResult.data?.getStringExtra("ListaFiltrada")
             valorFechaInicio = activityResult.data?.getStringExtra("fechaInicio" ).toString()
             valorFechaFin = activityResult.data?.getStringExtra("fechaFin").toString()
-            valorSpinner = activityResult.data?.getFloatExtra("valorSlider", 0F)!!
+            valorSpinner = activityResult.data?.getFloatExtra("valorSlider",0F)!!
             estadoCheckBoxPagadas = activityResult.data?.getBooleanExtra("checkboxPagadas",false) == true
             estadoCheckBoxAnuladas = activityResult.data?.getBooleanExtra("checkboxAnuladas",false) == true
             estadoCheckBoxCuotaFija = activityResult.data?.getBooleanExtra("checkboxCuotaFija",false) == true
@@ -100,8 +99,8 @@ class MainActivity : AppCompatActivity() {
                         intent.putExtra("listaFacturasSinFiltrar", listadoFiltraFactura)
                         intent.putExtra("fechaInicio", valorFechaInicio)
                         intent.putExtra("fechaFin", valorFechaFin)
-                        intent.putExtra("valorSlider", valorSpinner)
-                        Log.d("Valorslider", valorSpinner.toString())
+                        intent.putExtra("valorslider", valorSpinner)
+                        Log.d("valorslider", valorSpinner.toString())
                         intent.putExtra("checkboxPagadas", estadoCheckBoxPagadas)
                         intent.putExtra("checkboxAnuladas", estadoCheckBoxAnuladas)
                         intent.putExtra("checkboxCuotaFija",  estadoCheckBoxCuotaFija)
@@ -113,14 +112,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        //Acción que activa el Retromock al pulsar 5 veces el boton
-        binding.activityMainToolbarBtnActivarRetromock.setOnClickListener() {
-            pulsaciones++
-            if (pulsaciones == 5) {
-                facturasViewModel.onCreate()
-                pulsaciones = 0
-            }
-        }
+
 
         //Obsevador del ViewModel
         facturasViewModel.facturas.observe(this) {

@@ -58,7 +58,7 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         binding.activitySecondCardviewFiltroFechaBtnFechaFin.text =
             intent.getStringExtra("fechaFin")
         binding.activitySecondCardviewFiltroImporteSlImporte.value =
-            intent.getFloatExtra("valorSlider", 0F)
+            intent.getFloatExtra("valorslider", 0F)
         binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked =
             intent.getBooleanExtra("checkboxPagadas", false)
         binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked =
@@ -137,7 +137,7 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             resultIntent.putExtra("ListaFiltrada", listaFacturas)
             resultIntent.putExtra("fechaInicio", binding.activitySecondCardviewFiltroFechaBtnFechaini.text)
             resultIntent.putExtra("fechaFin", binding.activitySecondCardviewFiltroFechaBtnFechaFin.text)
-            resultIntent.putExtra("valorSlider", binding.activitySecondCardviewFiltroImporteSlImporte.value)
+            resultIntent.putExtra("valorslider", binding.activitySecondCardviewFiltroImporteSlImporte.value )
             resultIntent.putExtra("checkboxPagadas", binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked)
             resultIntent.putExtra("checkboxAnuladas", binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked)
             resultIntent.putExtra("checkboxCuotaFija", binding.activitySecondCardviewFiltroEstadoCbcuotafija.isChecked)
@@ -148,24 +148,20 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         }
 
         jsonFiltroFacturasModel = intent.getStringExtra("listaFacturasSinFiltrar").toString()
-        facturas =
-            json.fromJson(jsonFiltroFacturasModel, object : TypeToken<List<Factura?>?>() {}.type)
-        val ordenPorImporte =
-            facturas.sortedByDescending { facturas: Factura -> facturas.importeOrdenacion }
+        facturas = json.fromJson(jsonFiltroFacturasModel, object : TypeToken<List<Factura?>?>() {}.type)
+        val ordenPorImporte = facturas.sortedByDescending { facturas: Factura -> facturas.importeOrdenacion }
         binding.tvImporteMaximo.text = getString(
             R.string.itemFacturas_simboloMoneda,
             ordenPorImporte.first().importeOrdenacion.toInt() + 1
         )
-        binding.variacionImporte.text = intent.getFloatExtra("valorSlider", 0F).toInt().toString()
-        binding.activitySecondCardviewFiltroImporteSlImporte.valueTo =
-            ceil(ordenPorImporte.first().importeOrdenacion).toFloat()
-        // binding.activitySecondCardviewFiltroImporteSlImporte.value = valorSpinner
+        binding.variacionImporte.text = intent.getFloatExtra("valorslider", 0F).toInt().toString()
+        binding.activitySecondCardviewFiltroImporteSlImporte.valueTo = ceil(ordenPorImporte.first().importeOrdenacion).toFloat()
         binding.activitySecondCardviewFiltroImporteTvImporteMinimo.text = getString(
             R.string.itemFacturas_simboloMoneda,
             getString(R.string.activitySecond_cardviewFiltroImporte_tvImporteMinimo)
         )
 
-        Log.d("listaparaspinner", facturas.toString())
+        Log.d("spinner", binding.activitySecondCardviewFiltroImporteSlImporte.value.toString() )
     }
 
 

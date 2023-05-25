@@ -16,13 +16,17 @@
         tools:targetApi="31">
         <activity
             android:name=".data.network.domain.ui.view.ContraseniaOlvidada"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme"/>
         <activity
             android:name=".data.network.domain.ui.view.Registro"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme"
+            />
         <activity
             android:name=".data.network.domain.ui.view.PantallaInicio"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme"/>
         <activity
             android:name=".data.network.domain.ui.view.PantallaPrincipalSmartSolar"
             android:exported="false"

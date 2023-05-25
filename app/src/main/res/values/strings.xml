@@ -4,7 +4,7 @@
     <!--Recursos vista main activity-->
     <string name="activityMain.toolbar.tvConsumo">&lt; Consumo</string>
     <string name="activityMain.toolbar.tvFacturas">Facturas</string>
-    <string name="activityMain.toolbar.btnActivarRetromock">Retromock</string>
+    <string name="activityMain.toolbar.btnActivarRetromock">Retrofit activado</string>
 
     <!--Recursos vista second activity-->
     <string name="activitySecond.toolbar.titulo">Filtrar Facturas</string>
@@ -39,6 +39,8 @@
     <string name="pantallaInicio.tvTitulo">Prácticas Android</string>
     <string name="pantallaInicio.cardviewPractica1.tvTitulo">Práctica 1</string>
     <string name="pantallaInicio.cardviewPractica2.tvTitulo">Práctica 2</string>
+    <string name="pantallaInicio.toast.Retrofit">Retrofit activado</string>
+    <string name="pantallaInicio.toast.RetroMok">Retromock activado</string>
 
 
     <!--Recursos vista pantallaPrincipalSmartSolar-->
