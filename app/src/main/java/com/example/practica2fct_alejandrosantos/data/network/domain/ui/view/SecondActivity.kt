@@ -4,12 +4,11 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.CheckBox
 import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
+import com.example.practica2fct_alejandrosantos.DatosFiltros
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.data.FacturaRepository
-
 import com.example.practica2fct_alejandrosantos.data.network.domain.model.Factura
 import com.example.practica2fct_alejandrosantos.databinding.ActivitySecondBinding
 import com.google.gson.Gson
@@ -52,23 +51,14 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         config.setLocale(locale)
         baseContext.createConfigurationContext(config)
 
-
-        binding.activitySecondCardviewFiltroFechaBtnFechaini.text =
-            intent.getStringExtra("fechaInicio")
-        binding.activitySecondCardviewFiltroFechaBtnFechaFin.text =
-            intent.getStringExtra("fechaFin")
-        binding.activitySecondCardviewFiltroImporteSlImporte.value =
-            intent.getFloatExtra("valorslider", 0F)
-        binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked =
-            intent.getBooleanExtra("checkboxPagadas", false)
-        binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked =
-            intent.getBooleanExtra("checkboxAnuladas", false)
-        binding.activitySecondCardviewFiltroEstadoCbcuotafija.isChecked =
-            intent.getBooleanExtra("checkboxCuotaFija", false)
-        binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked =
-            intent.getBooleanExtra("checkboxPlanPago", false)
-        binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked =
-            intent.getBooleanExtra("checkboxPendientes", false)
+        binding.activitySecondCardviewFiltroFechaBtnFechaFin.text  = DatosFiltros.valorFechaFin
+        binding.activitySecondCardviewFiltroFechaBtnFechaini.text = DatosFiltros.valorFechaInicio
+        binding.activitySecondCardviewFiltroImporteSlImporte.value = DatosFiltros.valorSpinner
+        binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked = DatosFiltros.estadoCheckBoxPagadas
+        binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked = DatosFiltros.estadoCheckBoxAnuladas
+        binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked = DatosFiltros.estadoCheckBoxPlandePago
+        binding.activitySecondCardviewFiltroEstadoCbcuotafija.isChecked =  DatosFiltros.estadoCheckBoxCuotaFija
+        binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked = DatosFiltros.estadoCheckBoxPendientes
 
         binding.activitySecondToolbarImgBtnSalir.setOnClickListener() {
             finish()
@@ -121,7 +111,7 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked = false
         }
 
-        binding.activitySecondCardviewFiltroImporteSlImporte.addOnChangeListener { slider, value, fromUser ->
+        binding.activitySecondCardviewFiltroImporteSlImporte.addOnChangeListener { _, value, _ ->
             binding.variacionImporte.text =
                 getString(R.string.itemFacturas_simboloMoneda, ceil(value).toInt().toString())
         }
@@ -135,14 +125,14 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             listaFacturas = json.toJson(getParametrosEntradaActividad())
             Log.d("ListaFiltradaParaIntent", listaFacturas)
             resultIntent.putExtra("ListaFiltrada", listaFacturas)
-            resultIntent.putExtra("fechaInicio", binding.activitySecondCardviewFiltroFechaBtnFechaini.text)
-            resultIntent.putExtra("fechaFin", binding.activitySecondCardviewFiltroFechaBtnFechaFin.text)
-            resultIntent.putExtra("valorslider", binding.activitySecondCardviewFiltroImporteSlImporte.value )
-            resultIntent.putExtra("checkboxPagadas", binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked)
-            resultIntent.putExtra("checkboxAnuladas", binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked)
-            resultIntent.putExtra("checkboxCuotaFija", binding.activitySecondCardviewFiltroEstadoCbcuotafija.isChecked)
-            resultIntent.putExtra("checkboxPlanPago", binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked)
-            resultIntent.putExtra("checkboxPendientes", binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked)
+            DatosFiltros.valorFechaFin = binding.activitySecondCardviewFiltroFechaBtnFechaFin.text.toString()
+            DatosFiltros.valorFechaInicio = binding.activitySecondCardviewFiltroFechaBtnFechaini.text.toString()
+            DatosFiltros.valorSpinner = binding.activitySecondCardviewFiltroImporteSlImporte.value
+            DatosFiltros.estadoCheckBoxPagadas = binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked
+            DatosFiltros.estadoCheckBoxAnuladas = binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked
+            DatosFiltros.estadoCheckBoxPlandePago = binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked
+            DatosFiltros.estadoCheckBoxCuotaFija = binding.activitySecondCardviewFiltroEstadoCbcuotafija.isChecked
+            DatosFiltros.estadoCheckBoxPendientes = binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked
             setResult(RESULT_OK, resultIntent)
             finish()
         }

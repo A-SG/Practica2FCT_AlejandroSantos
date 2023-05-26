@@ -41,28 +41,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var getFacturasUseCase: GetFacturasUseCase
 
 
-    private  var valorFechaInicio : String = "dia/mes/año"
-    private  var valorFechaFin : String = "dia/mes/año"
-    private  var valorSpinner : Float = 0F
-    private  var estadoCheckBoxPagadas : Boolean = false
-    private  var estadoCheckBoxAnuladas : Boolean = false
-    private  var estadoCheckBoxCuotaFija : Boolean = false
-    private  var estadoCheckBoxPlandePago : Boolean = false
-    private  var estadoCheckBoxPendientes : Boolean = false
-
 
     // Obtenemos los resoltados de la SecondActivity
     private val responseLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { activityResult ->
             val jsonFiltroFacturasModel = activityResult.data?.getStringExtra("ListaFiltrada")
-            valorFechaInicio = activityResult.data?.getStringExtra("fechaInicio" ).toString()
-            valorFechaFin = activityResult.data?.getStringExtra("fechaFin").toString()
-            valorSpinner = activityResult.data?.getFloatExtra("valorSlider",0F)!!
-            estadoCheckBoxPagadas = activityResult.data?.getBooleanExtra("checkboxPagadas",false) == true
-            estadoCheckBoxAnuladas = activityResult.data?.getBooleanExtra("checkboxAnuladas",false) == true
-            estadoCheckBoxCuotaFija = activityResult.data?.getBooleanExtra("checkboxCuotaFija",false) == true
-            estadoCheckBoxPlandePago = activityResult.data?.getBooleanExtra("checkboxPlanPago",false) == true
-            estadoCheckBoxPendientes = activityResult.data?.getBooleanExtra("checkboxPendientes",false) == true
-
 
         if (activityResult.resultCode == RESULT_OK) {
                 adapter.facturas = gson.fromJson(
@@ -97,23 +79,11 @@ class MainActivity : AppCompatActivity() {
                     if (result.isNotEmpty()) {
                         listadoFiltraFactura = gson.toJson(result)
                         intent.putExtra("listaFacturasSinFiltrar", listadoFiltraFactura)
-                        intent.putExtra("fechaInicio", valorFechaInicio)
-                        intent.putExtra("fechaFin", valorFechaFin)
-                        intent.putExtra("valorslider", valorSpinner)
-                        Log.d("valorslider", valorSpinner.toString())
-                        intent.putExtra("checkboxPagadas", estadoCheckBoxPagadas)
-                        intent.putExtra("checkboxAnuladas", estadoCheckBoxAnuladas)
-                        intent.putExtra("checkboxCuotaFija",  estadoCheckBoxCuotaFija)
-                        intent.putExtra("checkboxPlanPago", estadoCheckBoxPlandePago)
-                        intent.putExtra("checkboxPendientes", estadoCheckBoxPendientes)
                         responseLauncher.launch(intent)
                     }
                 }
             }
         }
-
-
-
         //Obsevador del ViewModel
         facturasViewModel.facturas.observe(this) {
             adapter.facturas = facturasViewModel.facturas.value!!
