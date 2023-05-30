@@ -104,7 +104,4 @@
     <string name="contraseñaolvidada.btnTexto">Enviar</string>
     <string name="contraseñaolvidada.toast.usuarioExistente">El usuario no existe, revise el Email Introducido</string>
 
-
-
-
 </resources>

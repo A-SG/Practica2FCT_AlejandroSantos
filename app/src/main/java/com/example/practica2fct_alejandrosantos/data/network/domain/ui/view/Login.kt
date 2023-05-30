@@ -35,7 +35,6 @@ class Login : AppCompatActivity() {
             }
 
         }
-
         binding.loginTvDatosOlvidados.setOnClickListener {
             val intent = Intent(this, ContraseniaOlvidada::class.java)
             startActivity(intent)

@@ -26,6 +26,7 @@
         android:background="@drawable/borde_botones"
         android:text="Registrate"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,8 +36,8 @@
         android:id="@+id/registro.textinputlayout.usuario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="17dp"
-        android:hint="@string/registro.edUsuario.hint"
+        android:layout_marginBottom="12dp"
+        android:hint="@string/login.edUsuario.hint"
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/registro.textinputlayout.contrasena"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +48,6 @@
             android:id="@+id/registro.edUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
             android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -55,21 +55,21 @@
     <com.google.android.material.textfield.TextInputLayout
 
         android:id="@+id/registro.textinputlayout.contrasena"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="410dp"
+        android:layout_height="64dp"
         android:layout_marginBottom="34dp"
         android:hint="@string/registro.edContrasenia.hint"
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/registrate.btnregistrarse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registro.textinputlayout.usuario">
+        app:layout_constraintTop_toBottomOf="@+id/registro.textinputlayout.usuario"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registro.edContrasena"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
+            android:layout_height="39dp"
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>

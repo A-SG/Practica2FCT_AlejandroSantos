@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.practica2fct_alejandrosantos.DatosFiltros
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.data.FacturaRepository
@@ -25,7 +26,6 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
     @Inject
     lateinit var facturaRepository: FacturaRepository
-
     private lateinit var binding: ActivitySecondBinding
     private val calendarfechaDesde = Calendar.getInstance()
     private val calendarfechHasta = Calendar.getInstance()
@@ -51,14 +51,19 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         config.setLocale(locale)
         baseContext.createConfigurationContext(config)
 
-        binding.activitySecondCardviewFiltroFechaBtnFechaFin.text  = DatosFiltros.valorFechaFin
+        binding.activitySecondCardviewFiltroFechaBtnFechaFin.text = DatosFiltros.valorFechaFin
         binding.activitySecondCardviewFiltroFechaBtnFechaini.text = DatosFiltros.valorFechaInicio
         binding.activitySecondCardviewFiltroImporteSlImporte.value = DatosFiltros.valorSpinner
-        binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked = DatosFiltros.estadoCheckBoxPagadas
-        binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked = DatosFiltros.estadoCheckBoxAnuladas
-        binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked = DatosFiltros.estadoCheckBoxPlandePago
-        binding.activitySecondCardviewFiltroEstadoCbcuotafija.isChecked =  DatosFiltros.estadoCheckBoxCuotaFija
-        binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked = DatosFiltros.estadoCheckBoxPendientes
+        binding.activitySecondCardviewFiltroEstadoCbpagadas.isChecked =
+            DatosFiltros.estadoCheckBoxPagadas
+        binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked =
+            DatosFiltros.estadoCheckBoxAnuladas
+        binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked =
+            DatosFiltros.estadoCheckBoxPlandePago
+        binding.activitySecondCardviewFiltroEstadoCbcuotafija.isChecked =
+            DatosFiltros.estadoCheckBoxCuotaFija
+        binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked =
+            DatosFiltros.estadoCheckBoxPendientes
 
         binding.activitySecondToolbarImgBtnSalir.setOnClickListener() {
             finish()
@@ -73,7 +78,6 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
                 calendarfechaDesde.get(Calendar.MONTH),
                 calendarfechaDesde.get(Calendar.DAY_OF_MONTH)
             )
-            //picker.datePicker.maxDate = calendarfechaDesde.timeInMillis
             picker.show()
         }
 
@@ -109,6 +113,11 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             binding.activitySecondCardviewFiltroEstadoCbanuladas.isChecked = false
             binding.activitySecondCardviewFiltroEstadoCbpendientesPago.isChecked = false
             binding.activitySecondCardviewFiltroEstadoCbplanDePago.isChecked = false
+            jsonFiltroFacturasModel = intent.getStringExtra("listaFacturasSinFiltrar").toString()
+            facturas = json.fromJson(
+                jsonFiltroFacturasModel,
+                object : TypeToken<List<Factura?>?>() {}.type
+            )
         }
 
         binding.activitySecondCardviewFiltroImporteSlImporte.addOnChangeListener { _, value, _ ->
@@ -150,8 +159,6 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             R.string.itemFacturas_simboloMoneda,
             getString(R.string.activitySecond_cardviewFiltroImporte_tvImporteMinimo)
         )
-
-        Log.d("spinner", binding.activitySecondCardviewFiltroImporteSlImporte.value.toString() )
     }
 
 
@@ -249,6 +256,8 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
                 )
             )
 
+                Log.d("ValorSlider", binding.activitySecondCardviewFiltroImporteSlImporte.value.toString())
+
             //Filtrado de factura por su importe
                 if (listaFiltrada.isEmpty()) {
                     listaFiltrada =
@@ -284,11 +293,21 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
     private fun mostrarFechaFormateada(timestamp: Long) {
         binding.activitySecondCardviewFiltroFechaBtnFechaini.text = formatter.format(timestamp)
-        binding.activitySecondCardviewFiltroFechaBtnFechaini.setTextColor(resources.getColor(R.color.black))
+        binding.activitySecondCardviewFiltroFechaBtnFechaini.setTextColor(
+            ContextCompat.getColor(
+                this,
+                R.color.black
+            )
+        )
     }
 
     private fun mostrarFechaFormateadaFin(timestamp: Long) {
         binding.activitySecondCardviewFiltroFechaBtnFechaFin.text = formatter.format(timestamp)
-        binding.activitySecondCardviewFiltroFechaBtnFechaFin.setTextColor(resources.getColor(R.color.black))
+        binding.activitySecondCardviewFiltroFechaBtnFechaFin.setTextColor(
+            ContextCompat.getColor(
+                this,
+                R.color.black
+            )
+        )
     }
 }

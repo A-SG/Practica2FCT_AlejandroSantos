@@ -20,11 +20,10 @@ object NetworkModule {
     @Provides
     fun provideRetrofit():Retrofit{
         return Retrofit.Builder()
-            .baseUrl("https://viewnextandroid.mocklab.io/")
+            .baseUrl("https://viewnextandroid.mocklab.io2/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-
 
     @Singleton
     @Provides

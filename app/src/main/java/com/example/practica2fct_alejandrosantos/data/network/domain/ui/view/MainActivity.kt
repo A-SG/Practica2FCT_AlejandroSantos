@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    // Obtenemos los resoltados de la SecondActivity
+    // Obtenemos los resultados de la SecondActivity
     private val responseLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { activityResult ->
             val jsonFiltroFacturasModel = activityResult.data?.getStringExtra("ListaFiltrada")
 
