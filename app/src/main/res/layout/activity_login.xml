@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/activityLogin"
     tools:context=".data.network.domain.ui.view.Login">
 
     <View
@@ -22,13 +23,14 @@
         android:id="@+id/login.textinputlayout.usuario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginTop="181dp"
+        android:layout_marginBottom="450dp"
         android:hint="@string/login.edUsuario.hint"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/login.textinputlayout.contrasena"
+        app:layout_constraintBottom_toTopOf="@+id/ayudaTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login.imgview.Iberdrola">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login.etUsuario"
@@ -127,10 +129,10 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.587"
+        app:layout_constraintHorizontal_bias="0.586"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.942" />
+        app:layout_constraintVertical_bias="0.922" />
 
     <View
         android:id="@+id/divider"
@@ -151,10 +153,24 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="103dp"
         android:text="@string/login.tvTambienPuedes"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/divider2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login.cbRecordarContrasenia" />
+
+    <TextView
+        android:id="@+id/ayudaTV"
+        android:layout_width="147dp"
+        android:layout_height="21dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/login.tvNecesitasAyuda"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/login.btnRegistrarse"
+        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintStart_toStartOf="@+id/login.btnRegistrarse"
+        app:layout_constraintTop_toBottomOf="@+id/login.textinputlayout.usuario" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

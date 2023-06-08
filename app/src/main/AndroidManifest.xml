@@ -32,6 +32,26 @@
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
+            android:name=".centroAyudaActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".WebWiewActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".chat.ChatActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".averias.NotificacionAveriasActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".preguntasFrecuentes.PreguntasFrecuentesActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name=".data.network.domain.ui.view.Login"
             android:exported="true"
             android:theme="@style/AppTheme">

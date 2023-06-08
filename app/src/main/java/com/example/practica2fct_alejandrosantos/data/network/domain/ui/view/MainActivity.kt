@@ -14,6 +14,8 @@ import com.example.practica2fct_alejandrosantos.data.network.domain.GetFacturasU
 import com.example.practica2fct_alejandrosantos.data.network.domain.ui.viewmodel.FacturasViewModel
 import com.example.practica2fct_alejandrosantos.databinding.ActivityMainBinding
 import com.example.practica2fct_alejandrosantos.data.network.domain.model.Factura
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.AndroidEntryPoint
@@ -64,9 +66,23 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Remote Config
+
+
         adapter = FacturasAdapter(emptyList())
         binding.activityMainRvFacturas.adapter = adapter
-        facturasViewModel.onCreate()
+
+        Firebase.remoteConfig.fetchAndActivate().addOnCompleteListener(){task->
+            if (task.isSuccessful){
+                val mostrarlista = Firebase.remoteConfig.getBoolean("mostrar_Lista")
+
+                if (mostrarlista){
+                    facturasViewModel.onCreate()
+                }
+            }
+        }
+
+
 
 
         //Botón para pasar a la SecondActivity ( Actividad de fitros)

@@ -89,6 +89,7 @@
     <string name="login.edContrasenia.hint">Contraseña</string>
     <string name="login.toast.noPosibleRegistro">No es posible el registro de sesión</string>
     <string name="login.toast.camposUsuarioContraseñaVacios">Por favor, introduzca la el usuario y la contraseña</string>
+    <string name="login.tvNecesitasAyuda">¿NECESITAS AYUDA?</string>
 
     <!--Rcursos para la vista Registrarse-->
     <string name="registro.textoBotonRegistrarse">Registrarse</string>
@@ -104,4 +105,22 @@
     <string name="contraseñaolvidada.btnTexto">Enviar</string>
     <string name="contraseñaolvidada.toast.usuarioExistente">El usuario no existe, revise el Email Introducido</string>
 
+    <!--Recursos para la vista de "centro ayuda-->
+    <string name="activity_CentroAyuda.btnTextoPreguntasFrecuentes"> Preguntas frecuentes</string>
+    <string name="activity_CentroAyuda.btnTextoAsistente"> Asistente</string>
+    <string name="activity_CentroAyuda.btnTextoNotificacionAveria">Notificar Avería</string>
+    <string name="activity_CentroAyuda.btnTextoPaginaWeb">Página web</string>
+
+    <!-- Activity Notificacion Averia -->
+    <string name="activity_notificacion_averias.tietMotivoAveriaHint">Descripción Avería</string>
+    <string name="activity_notificacion_averias.btEnviarAveriaText">Enviar Avería</string>
+    <string name="activity_notificacion_averias.tvTitleAveriaText">Avería</string>
+    <string name="activity_notificacion_averias.spinnerItem1">Panel Solar</string>
+    <string name="activity_notificacion_averias.spinnerItem2">Instalación Electrica</string>
+    <string name="activity_notificacion_averias.spinnerItem3">Otros</string>
+    <string name="activity_notificacion_averias.enviarAveria">Avería Enviada</string>
+
+    <!-- Recursos mensaje_item -->
+    <string name="mensaje_item.mensajebot">This is a sample message that will appear</string>
+    <string name="mensaje_item.mensajehumano">This is a sample message that will appear</string>
 </resources>

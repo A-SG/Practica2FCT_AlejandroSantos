@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".averias.NotificacionAveriasActivity">
+
+    <ImageButton
+        android:id="@+id/imgBtnSalir2"
+        android:layout_width="42dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:src="@drawable/icono_salir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLimiteIzquierdo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/GlobalMarginSideNotificacionAverias" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLimiteDerecho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/GlobalMarginSideNotificacionAverias" />
+
+    <TextView
+        android:id="@+id/tvTitleAveria"
+        style="@style/TitleActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/activity_notificacion_averias.tvTitleAveriaText"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spTipoAveria"
+        style="@style/NormalTextActivity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        app:layout_constraintEnd_toEndOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleAveria" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilMotivoAveria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toTopOf="@+id/spTipoAveria">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietMotivoAveria"
+            style="@style/NormalTextActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/activity_notificacion_averias.tietMotivoAveriaHint"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btEnviarAveria"
+        style="@style/botones_primarios"
+        android:background="@drawable/borde_boton_blanco"
+        android:textColor="@color/black"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/activity_notificacion_averias.btEnviarAveriaText"
+        app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
+        app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
+        app:layout_constraintTop_toBottomOf="@+id/tilMotivoAveria" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
