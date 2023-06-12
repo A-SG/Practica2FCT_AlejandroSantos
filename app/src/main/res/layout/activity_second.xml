@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activitySecond"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".data.network.domain.ui.view.SecondActivity">
@@ -110,13 +111,14 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/activitySecond.cardviewFiltroFecha.Desde"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
                             android:text="@string/activitySecond.cardViewFiltroFecha.tvFechainicio"
+                            android:textColor="@color/gris"
                             android:textSize="15sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/gris"/>
+                            android:textStyle="bold" />
 
                         <Button
                             android:id="@+id/activitySecond.cardviewFiltroFecha.btnFechaini"
@@ -144,8 +146,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/activitySecond.cardViewFiltroFecha.tvFechaFin"
-                            android:textSize="15sp"
-                            android:textColor="@color/gris"/>
+                            android:textColor="@color/gris"
+                            android:textSize="15sp" />
 
                         <Button
                             android:id="@+id/activitySecond.cardviewFiltroFecha.btnFechaFin"
@@ -169,8 +171,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/activitySecond.cardviewFiltroFecha">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="175dp">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/activitySecond.cardviewFiltroImporte.titulo"

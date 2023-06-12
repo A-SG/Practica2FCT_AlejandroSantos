@@ -12,6 +12,8 @@ import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.data.FacturaRepository
 import com.example.practica2fct_alejandrosantos.data.network.domain.model.Factura
 import com.example.practica2fct_alejandrosantos.databinding.ActivitySecondBinding
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,6 +46,35 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         super.onCreate(savedInstanceState)
         binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        Firebase.remoteConfig.fetchAndActivate().addOnCompleteListener(){ task->
+            if (task.isSuccessful){
+                val modoOscuro = Firebase.remoteConfig.getBoolean("modo_Oscuro")
+
+                if (modoOscuro){
+                    binding.activitySecondToolbar.setBackgroundColor(resources.getColor(R.color.black))
+                    binding.activitySecondToolbarTitulo.setTextColor(resources.getColor(R.color.white))
+                    binding.activitySecondCardviewFiltroFechaTitulo.setTextColor(resources.getColor(R.color.white))
+                    binding.activitySecondCardviewFiltroFechaDesde.setTextColor(resources.getColor(R.color.white))
+                    binding.activitySecondCardviewFiltroFecha.setCardBackgroundColor(getColor(R.color.black))
+                    binding.activitySecondCardviewFiltroImporte.setCardBackgroundColor(getColor(R.color.black))
+                    binding.activitySecondCardviewFiltroImporteTvImporteMinimo.setTextColor(getColor(R.color.white))
+                    binding.variacionImporte.setTextColor(resources.getColor(R.color.white))
+                    binding.tvImporteMaximo.setTextColor(resources.getColor(R.color.white))
+                    binding.activitySecondCardviewFiltroEstadoTvtitulo.setTextColor(resources.getColor(R.color.white))
+                    binding.activitySecondCardviewFiltroEstadoCbpagadas.setTextColor(resources.getColor(R.color.white))
+                    binding.activitySecondCardviewFiltroEstadoCbanuladas.setTextColor(resources.getColor(R.color.white))
+                    binding.activitySecondCardviewFiltroEstadoCbcuotafija.setTextColor(resources.getColor(R.color.white))
+                    binding.activitySecondCardviewFiltroEstadoCbplanDePago.setTextColor(resources.getColor(R.color.white))
+                    binding.activitySecondCardviewFiltroEstadoCbpendientesPago.setTextColor(resources.getColor(R.color.white))
+                    binding.activitySecondCardviewFiltroEstado.setCardBackgroundColor(resources.getColor(R.color.black))
+                    binding.activitySecond.setBackgroundColor(resources.getColor(R.color.black))
+
+
+
+                }
+            }
+        }
 
         val locale = Locale("es")
         Locale.setDefault(locale)

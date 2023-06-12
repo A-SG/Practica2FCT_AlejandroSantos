@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.databinding.ItemFacturaBinding
 import com.example.practica2fct_alejandrosantos.data.network.domain.model.Factura
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.ktx.remoteConfig
 import java.text.SimpleDateFormat
 import java.util.*
 

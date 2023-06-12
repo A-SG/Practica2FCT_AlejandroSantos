@@ -7,6 +7,8 @@ import android.widget.Toast
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.data.network.FacturasService
 import com.example.practica2fct_alejandrosantos.databinding.ActivityPantallaInicioBinding
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.ktx.remoteConfig
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -31,6 +33,21 @@ class PantallaInicio : AppCompatActivity() {
         binding.pantallaInicioCardviewPractica2ImgBtnPractica2.setOnClickListener() {
             val intent = Intent(this, PantallaPrincipalSmartSolar::class.java)
             startActivity(intent)
+        }
+        //Remote Config
+        Firebase.remoteConfig.fetchAndActivate().addOnCompleteListener(){ task->
+            if (task.isSuccessful){
+                val modoOscuro = Firebase.remoteConfig.getBoolean("modo_Oscuro")
+
+                if (modoOscuro){
+                    binding.pantallaInicio.setBackgroundColor(resources.getColor(R.color.black))
+                    binding.pantallaInicioTvTitulo.setTextColor(resources.getColor(R.color.white))
+                    binding.pantallaInicioCardViewPractica1.setBackgroundColor(resources.getColor(R.color.black))
+                    binding.pantallaInicioCardviewPractica2.setBackgroundColor(resources.getColor(R.color.black))
+                    binding.pantallaInicioCardviewPractica1TvTitulo.setTextColor(resources.getColor(R.color.white))
+                    binding.pantallaInicioCardviewPractica2TvTitulo.setTextColor(resources.getColor(R.color.white))
+                }
+            }
         }
 
         binding.pantallaInicioBtnRetromock.text= getString(R.string.pantallaInicio_toast_Retrofit)

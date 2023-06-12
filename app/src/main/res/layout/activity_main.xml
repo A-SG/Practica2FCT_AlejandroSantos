@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/activityMain"
     tools:context=".data.network.domain.ui.view.MainActivity">
 
 
@@ -18,6 +19,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
             app:layout_constraintBottom_toBottomOf="@+id/pantallaSmartSolar.toolbar.boton"
             app:layout_constraintTop_toBottomOf="@+id/pantallaSmartSolar.toolbar.boton">
 

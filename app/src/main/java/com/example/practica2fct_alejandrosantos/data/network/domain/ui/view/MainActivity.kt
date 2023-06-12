@@ -55,9 +55,7 @@ class MainActivity : AppCompatActivity() {
                 )
                 facturasViewModel.facturas.value = adapter.facturas
                 adapter.notifyDataSetChanged()
-
             }
-
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,7 +65,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //Remote Config
+        /*Firebase.remoteConfig.fetchAndActivate().addOnCompleteListener(){task->
+            if (task.isSuccessful){
+                val modoOscuro = Firebase.remoteConfig.getBoolean("modo_Oscuro")
 
+                if (modoOscuro){
+                    binding.activityMain.setBackgroundColor(resources.getColor(R.color.white))
+                    binding.activitymainToolbarTvtitulo.setTextColor(resources.getColor(R.color.white))
+                    binding.activityMainToolbarBtnConsumo.setTextColor(resources.getColor(R.color.white))
+                    binding.toolbar.setBackgroundColor(resources.getColor(R.color.black))
+                }
+            }
+        }*/
 
         adapter = FacturasAdapter(emptyList())
         binding.activityMainRvFacturas.adapter = adapter

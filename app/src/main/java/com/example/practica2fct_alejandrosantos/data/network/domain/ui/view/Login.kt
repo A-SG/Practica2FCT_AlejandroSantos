@@ -34,7 +34,7 @@ class Login : AppCompatActivity() {
 
         Firebase.remoteConfig.fetchAndActivate().addOnCompleteListener(){task->
             if (task.isSuccessful){
-                val modoOscuro = Firebase.remoteConfig.getBoolean("mostrar_Lista")
+                val modoOscuro = Firebase.remoteConfig.getBoolean("modo_Oscuro")
 
                 if (modoOscuro){
                     binding.activityLogin.setBackgroundColor(resources.getColor(R.color.black))
