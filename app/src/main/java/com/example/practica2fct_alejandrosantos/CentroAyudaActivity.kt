@@ -3,6 +3,7 @@ package com.example.practica2fct_alejandrosantos
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import com.example.practica2fct_alejandrosantos.databinding.ActivityCentroAyudaBinding
 import com.example.practica2fct_alejandrosantos.averias.NotificacionAveriasActivity
 import com.example.practica2fct_alejandrosantos.chat.ChatActivity
@@ -23,7 +24,7 @@ class CentroAyudaActivity : AppCompatActivity() {
                 val modoOscuro = Firebase.remoteConfig.getBoolean("modo_Oscuro")
 
                 if (modoOscuro){
-                  binding.centroAyuda.setBackgroundColor(resources.getColor(R.color.black))
+                  binding.centroAyuda.setBackgroundColor(ContextCompat.getColor(this, R.color.black))
                 }
             }
         }

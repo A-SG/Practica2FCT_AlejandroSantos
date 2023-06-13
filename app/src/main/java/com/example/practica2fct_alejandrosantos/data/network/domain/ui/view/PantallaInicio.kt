@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.data.network.FacturasService
 import com.example.practica2fct_alejandrosantos.databinding.ActivityPantallaInicioBinding
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class PantallaInicio : AppCompatActivity() {
@@ -58,12 +60,12 @@ class PantallaInicio : AppCompatActivity() {
                 }
 
                 if (modoOscuro){
-                    binding.pantallaInicio.setBackgroundColor(resources.getColor(R.color.black))
-                    binding.pantallaInicioTvTitulo.setTextColor(resources.getColor(R.color.white))
-                    binding.pantallaInicioCardViewPractica1.setBackgroundColor(resources.getColor(R.color.black))
-                    binding.pantallaInicioCardviewPractica2.setBackgroundColor(resources.getColor(R.color.black))
-                    binding.pantallaInicioCardviewPractica1TvTitulo.setTextColor(resources.getColor(R.color.white))
-                    binding.pantallaInicioCardviewPractica2TvTitulo.setTextColor(resources.getColor(R.color.white))
+                    binding.pantallaInicio.setBackgroundColor(ContextCompat.getColor(this, R.color.black))
+                    binding.pantallaInicioTvTitulo.setTextColor(ContextCompat.getColor(this, R.color.white))
+                    binding.pantallaInicioCardViewPractica1.setBackgroundColor(ContextCompat.getColor(this, R.color.black))
+                    binding.pantallaInicioCardviewPractica2.setBackgroundColor(ContextCompat.getColor(this, R.color.black))
+                    binding.pantallaInicioCardviewPractica1TvTitulo.setTextColor(ContextCompat.getColor(this, R.color.white))
+                    binding.pantallaInicioCardviewPractica2TvTitulo.setTextColor(ContextCompat.getColor(this, R.color.white))
                 }
 
 

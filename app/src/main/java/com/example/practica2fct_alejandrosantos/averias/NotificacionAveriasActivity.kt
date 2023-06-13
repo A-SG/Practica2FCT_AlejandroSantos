@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.databinding.ActivityNotificacionAveriasBinding
 import com.google.firebase.ktx.Firebase
@@ -22,10 +23,10 @@ class NotificacionAveriasActivity : AppCompatActivity() {
                 val modoOscuro = Firebase.remoteConfig.getBoolean("modo_Oscuro")
 
                 if (modoOscuro){
-                    binding.averias.setBackgroundColor(resources.getColor(R.color.black))
-                    binding.tvTitleAveria.setTextColor(resources.getColor(R.color.white))
-                    binding.spTipoAveria.setBackgroundColor(resources.getColor(R.color.gris))
-                    binding.tietMotivoAveria.setBackgroundColor(resources.getColor(R.color.gris))
+                    binding.averias.setBackgroundColor(ContextCompat.getColor(this, R.color.black))
+                    binding.tvTitleAveria.setTextColor(ContextCompat.getColor(this, R.color.white))
+                    binding.spTipoAveria.setBackgroundColor(ContextCompat.getColor(this, R.color.gris))
+                    binding.tietMotivoAveria.setBackgroundColor(ContextCompat.getColor(this, R.color.gris))
                 }
             }
         }
