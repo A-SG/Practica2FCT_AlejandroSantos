@@ -1,12 +1,11 @@
 package com.example.practica2fct_alejandrosantos.data.network.domain.ui.view
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.practica2fct_alejandrosantos.R
-import com.example.practica2fct_alejandrosantos.centroAyudaActivity
+import com.example.practica2fct_alejandrosantos.CentroAyudaActivity
 import com.example.practica2fct_alejandrosantos.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
@@ -81,7 +80,7 @@ class Login : AppCompatActivity() {
         }
         binding.ayudaTV.setOnClickListener(){
 
-            val intent = Intent(this, centroAyudaActivity::class.java)
+            val intent = Intent(this, CentroAyudaActivity::class.java)
             startActivity(intent)
         }
     }

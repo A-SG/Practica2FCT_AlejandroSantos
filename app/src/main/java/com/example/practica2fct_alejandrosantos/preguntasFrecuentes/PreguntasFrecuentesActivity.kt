@@ -4,8 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.practica2fct_alejandrosantos.centroAyudaActivity
+import com.example.practica2fct_alejandrosantos.CentroAyudaActivity
+import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.databinding.ActivityPreguntasFrecuentesBinding
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.ktx.remoteConfig
 
 
 class PreguntasFrecuentesActivity : AppCompatActivity() {
@@ -18,7 +21,7 @@ class PreguntasFrecuentesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.preguntasFrecuentesToolbarImgBtnSalir.setOnClickListener(){
-            val intent = Intent(this, centroAyudaActivity::class.java)
+            val intent = Intent(this, CentroAyudaActivity::class.java)
             startActivity(intent)
         }
         initReciclerView()

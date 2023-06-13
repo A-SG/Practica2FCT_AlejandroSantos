@@ -7,14 +7,26 @@ import com.example.practica2fct_alejandrosantos.databinding.ActivityCentroAyudaB
 import com.example.practica2fct_alejandrosantos.averias.NotificacionAveriasActivity
 import com.example.practica2fct_alejandrosantos.chat.ChatActivity
 import com.example.practica2fct_alejandrosantos.preguntasFrecuentes.PreguntasFrecuentesActivity
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.ktx.remoteConfig
 
-class centroAyudaActivity : AppCompatActivity() {
+class CentroAyudaActivity : AppCompatActivity() {
 
     private lateinit var  binding: ActivityCentroAyudaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCentroAyudaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        Firebase.remoteConfig.fetchAndActivate().addOnCompleteListener(){ task->
+            if (task.isSuccessful){
+                val modoOscuro = Firebase.remoteConfig.getBoolean("modo_Oscuro")
+
+                if (modoOscuro){
+                  binding.centroAyuda.setBackgroundColor(resources.getColor(R.color.black))
+                }
+            }
+        }
 
 
 
@@ -40,6 +52,8 @@ class centroAyudaActivity : AppCompatActivity() {
         binding.imgBtnSalir.setOnClickListener {
             finish()
         }
+
+
 
 
 

@@ -3,6 +3,7 @@ package com.example.practica2fct_alejandrosantos.data.network.domain.ui.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.data.network.FacturasService
@@ -38,6 +39,23 @@ class PantallaInicio : AppCompatActivity() {
         Firebase.remoteConfig.fetchAndActivate().addOnCompleteListener(){ task->
             if (task.isSuccessful){
                 val modoOscuro = Firebase.remoteConfig.getBoolean("modo_Oscuro")
+                val practica1 = Firebase.remoteConfig.getBoolean("mostrar_opcion1menu")
+                val practica2 = Firebase.remoteConfig.getBoolean("mostrar_opcion2menu")
+
+
+
+                if (practica1){
+                    binding.pantallaInicioCardViewPractica1.visibility = View.VISIBLE
+                }
+                else{
+                    binding.pantallaInicioCardViewPractica1.visibility = View.GONE
+                }
+                if (practica2){
+                    binding.pantallaInicioCardviewPractica2.visibility = View.VISIBLE
+                }
+                else{
+                    binding.pantallaInicioCardviewPractica2.visibility = View.GONE
+                }
 
                 if (modoOscuro){
                     binding.pantallaInicio.setBackgroundColor(resources.getColor(R.color.black))
@@ -47,6 +65,8 @@ class PantallaInicio : AppCompatActivity() {
                     binding.pantallaInicioCardviewPractica1TvTitulo.setTextColor(resources.getColor(R.color.white))
                     binding.pantallaInicioCardviewPractica2TvTitulo.setTextColor(resources.getColor(R.color.white))
                 }
+
+
             }
         }
 

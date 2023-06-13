@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/averias"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".averias.NotificacionAveriasActivity">
@@ -74,14 +75,14 @@
     <Button
         android:id="@+id/btEnviarAveria"
         style="@style/botones_primarios"
-        android:background="@drawable/borde_boton_blanco"
-        android:textColor="@color/black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
+        android:background="@drawable/borde_boton_blanco"
         android:text="@string/activity_notificacion_averias.btEnviarAveriaText"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/glLimiteDerecho"
         app:layout_constraintStart_toStartOf="@+id/glLimiteIzquierdo"
         app:layout_constraintTop_toBottomOf="@+id/tilMotivoAveria" />

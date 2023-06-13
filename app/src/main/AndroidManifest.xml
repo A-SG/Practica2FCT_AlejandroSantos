@@ -32,7 +32,7 @@
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".centroAyudaActivity"
+            android:name=".CentroAyudaActivity"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
