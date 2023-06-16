@@ -5,7 +5,7 @@
     android:id="@+id/activitySecond"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".data.network.domain.ui.view.SecondActivity">
+    tools:context=".ui.view.SecondActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/activitySecond.toolbar"

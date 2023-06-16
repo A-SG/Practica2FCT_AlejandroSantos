@@ -1,4 +1,4 @@
-package com.example.practica2fct_alejandrosantos.data.network.domain.ui.view
+package com.example.practica2fct_alejandrosantos.ui.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class PantallaInicio : AppCompatActivity() {
+class PantallaInicioActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPantallaInicioBinding
     private var pulsaciones = 0
@@ -34,7 +34,7 @@ class PantallaInicio : AppCompatActivity() {
         }
         //Método que dirige a la práctica 2
         binding.pantallaInicioCardviewPractica2ImgBtnPractica2.setOnClickListener() {
-            val intent = Intent(this, PantallaPrincipalSmartSolar::class.java)
+            val intent = Intent(this, PantallaPrincipalSmartSolarActivity::class.java)
             startActivity(intent)
         }
         //Remote Config

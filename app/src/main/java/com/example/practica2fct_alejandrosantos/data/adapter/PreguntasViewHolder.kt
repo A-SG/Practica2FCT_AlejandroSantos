@@ -1,12 +1,11 @@
-package com.example.practica2fct_alejandrosantos.preguntasFrecuentes
+package com.example.practica2fct_alejandrosantos.data.adapter
 
 import android.annotation.SuppressLint
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practica2fct_alejandrosantos.R
+import com.example.practica2fct_alejandrosantos.data.model.Preguntas
 import com.example.practica2fct_alejandrosantos.databinding.ItemViewBinding
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.remoteconfig.ktx.remoteConfig
 
 
 class PreguntasViewHolder(view: View): RecyclerView.ViewHolder(view){

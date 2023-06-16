@@ -15,28 +15,28 @@
         android:theme="@style/Theme.Practica2FCT_AlejandroSAntos"
         tools:targetApi="31">
         <activity
-            android:name=".data.network.domain.ui.view.ContraseniaOlvidada"
+            android:name=".ui.view.ContraseniaOlvidadaActivity"
             android:exported="false"
             android:theme="@style/AppTheme"/>
         <activity
-            android:name=".data.network.domain.ui.view.Registro"
+            android:name=".ui.view.RegistroActivity"
             android:exported="false"
             android:theme="@style/AppTheme"
             />
         <activity
-            android:name=".data.network.domain.ui.view.PantallaInicio"
+            android:name=".ui.view.PantallaInicioActivity"
             android:exported="false"
             android:theme="@style/AppTheme"/>
         <activity
-            android:name=".data.network.domain.ui.view.PantallaPrincipalSmartSolar"
+            android:name=".ui.view.PantallaPrincipalSmartSolarActivity"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".CentroAyudaActivity"
+            android:name=".ui.CentroAyudaActivity"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".WebWiewActivity"
+            android:name=".ui.WebWiewActivity"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
@@ -44,15 +44,15 @@
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".averias.NotificacionAveriasActivity"
+            android:name=".ui.NotificacionAveriasActivity"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".preguntasFrecuentes.PreguntasFrecuentesActivity"
+            android:name=".ui.PreguntasFrecuentesActivity"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".data.network.domain.ui.view.Login"
+            android:name=".ui.view.LoginActivity"
             android:exported="true"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -62,11 +62,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".data.network.domain.ui.view.MainActivity"
+            android:name=".ui.view.MainActivity"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".data.network.domain.ui.view.SecondActivity"
+            android:name=".ui.view.SecondActivity"
             android:exported="false" />
     </application>
 

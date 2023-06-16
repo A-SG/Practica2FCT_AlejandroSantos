@@ -1,4 +1,4 @@
-package com.example.practica2fct_alejandrosantos.data.network.domain.ui.view
+package com.example.practica2fct_alejandrosantos.ui.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,7 @@ import com.example.practica2fct_alejandrosantos.data.adapter.ViewPagerAdapter
 import com.example.practica2fct_alejandrosantos.databinding.ActivityPantallaPrincipalSmartSolarBinding
 import com.google.android.material.tabs.TabLayout
 
-class PantallaPrincipalSmartSolar : AppCompatActivity() {
+class PantallaPrincipalSmartSolarActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPantallaPrincipalSmartSolarBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +18,7 @@ class PantallaPrincipalSmartSolar : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.pantallaSmartSolarToolbarBoton.setOnClickListener() {
-            val intent = Intent(this, PantallaInicio::class.java).apply {
+            val intent = Intent(this, PantallaInicioActivity::class.java).apply {
             }
             startActivity(intent)
         }

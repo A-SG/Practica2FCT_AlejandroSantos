@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".data.network.domain.ui.fragment.DetalleFragment">
+    tools:context=".ui.fragment.DetalleFragment">
 
     <ScrollView
         android:id="@+id/scrollView2"

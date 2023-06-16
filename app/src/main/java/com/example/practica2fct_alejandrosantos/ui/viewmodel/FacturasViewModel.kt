@@ -1,4 +1,4 @@
-package com.example.practica2fct_alejandrosantos.data.network.domain.ui.viewmodel
+package com.example.practica2fct_alejandrosantos.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -1,4 +1,4 @@
-package com.example.practica2fct_alejandrosantos.data.network.domain.ui.view
+package com.example.practica2fct_alejandrosantos.ui.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.practica2fct_alejandrosantos.R
-import com.example.practica2fct_alejandrosantos.CentroAyudaActivity
+import com.example.practica2fct_alejandrosantos.ui.CentroAyudaActivity
 import com.example.practica2fct_alejandrosantos.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
@@ -15,7 +15,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 
-class Login : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,7 +58,7 @@ class Login : AppCompatActivity() {
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(
                     binding.loginEtUsuario.text.toString(),
                     binding.loginEtContrasena.text.toString()).addOnSuccessListener {
-                    val intent = Intent(this, PantallaInicio::class.java)
+                    val intent = Intent(this, PantallaInicioActivity::class.java)
                     startActivity(intent)
                 }.addOnFailureListener {  Toast.makeText(
                     this,
@@ -71,12 +71,12 @@ class Login : AppCompatActivity() {
             }
         }
         binding.loginTvDatosOlvidados.setOnClickListener {
-            val intent = Intent(this, ContraseniaOlvidada::class.java)
+            val intent = Intent(this, ContraseniaOlvidadaActivity::class.java)
             startActivity(intent)
         }
 
         binding.loginBtnRegistrarse.setOnClickListener {
-            val intent = Intent(this, Registro::class.java)
+            val intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
         }
         binding.ayudaTV.setOnClickListener(){

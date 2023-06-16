@@ -1,4 +1,4 @@
-package com.example.practica2fct_alejandrosantos.data.network.domain.ui.view
+package com.example.practica2fct_alejandrosantos.ui.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,7 @@ import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.data.FacturaRepository
 import com.example.practica2fct_alejandrosantos.data.adapter.FacturasAdapter
 import com.example.practica2fct_alejandrosantos.data.network.domain.GetFacturasUseCase
-import com.example.practica2fct_alejandrosantos.data.network.domain.ui.viewmodel.FacturasViewModel
+import com.example.practica2fct_alejandrosantos.ui.viewmodel.FacturasViewModel
 import com.example.practica2fct_alejandrosantos.databinding.ActivityMainBinding
 import com.example.practica2fct_alejandrosantos.data.network.domain.model.Factura
 import com.google.firebase.ktx.Firebase
@@ -64,34 +64,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Remote Config
-        /*Firebase.remoteConfig.fetchAndActivate().addOnCompleteListener(){task->
-            if (task.isSuccessful){
-                val modoOscuro = Firebase.remoteConfig.getBoolean("modo_Oscuro")
-
-                if (modoOscuro){
-                    binding.activityMain.setBackgroundColor(resources.getColor(R.color.white))
-                    binding.activitymainToolbarTvtitulo.setTextColor(resources.getColor(R.color.white))
-                    binding.activityMainToolbarBtnConsumo.setTextColor(resources.getColor(R.color.white))
-                    binding.toolbar.setBackgroundColor(resources.getColor(R.color.black))
-                }
-            }
-        }*/
-
         adapter = FacturasAdapter(emptyList())
         binding.activityMainRvFacturas.adapter = adapter
-
-        Firebase.remoteConfig.fetchAndActivate().addOnCompleteListener(){task->
-            if (task.isSuccessful){
-                val mostrarlista = Firebase.remoteConfig.getBoolean("mostrar_Lista")
-
-                if (mostrarlista){
-                    facturasViewModel.onCreate()
-                }
-            }
-        }
-
-
+        facturasViewModel.onCreate()
 
 
         //Botón para pasar a la SecondActivity ( Actividad de fitros)

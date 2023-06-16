@@ -1,4 +1,4 @@
-package com.example.practica2fct_alejandrosantos.averias
+package com.example.practica2fct_alejandrosantos.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

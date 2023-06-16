@@ -1,4 +1,4 @@
-package com.example.practica2fct_alejandrosantos.data.network.domain.ui.view
+package com.example.practica2fct_alejandrosantos.ui.view
 
 import android.app.DatePickerDialog
 import android.content.Intent

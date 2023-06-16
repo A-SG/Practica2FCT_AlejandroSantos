@@ -1,10 +1,8 @@
-package com.example.practica2fct_alejandrosantos.data.network.domain.ui.view
+package com.example.practica2fct_alejandrosantos.ui.view
 
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.practica2fct_alejandrosantos.R
@@ -13,10 +11,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
-import kotlinx.coroutines.handleCoroutineException
 
 
-class Registro : AppCompatActivity() {
+class RegistroActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegistroBinding
     private  var excecepcion : Int = 0
@@ -35,7 +32,7 @@ class Registro : AppCompatActivity() {
                     binding.registroEdContrasena.text.toString()).addOnSuccessListener {    FirebaseAuth.getInstance().signInWithEmailAndPassword(
                     binding.registroEdUsuario.text.toString(),
                     binding.registroEdContrasena.text.toString()).addOnSuccessListener {
-                    val intent = Intent(this, PantallaInicio::class.java)
+                    val intent = Intent(this, PantallaInicioActivity::class.java)
                     startActivity(intent)
                 }  }
 

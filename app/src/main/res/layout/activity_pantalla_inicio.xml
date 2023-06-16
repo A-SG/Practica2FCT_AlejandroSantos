@@ -5,7 +5,7 @@
     android:id="@+id/pantallaInicio"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".data.network.domain.ui.view.PantallaInicio">
+    tools:context=".ui.view.PantallaInicioActivity">
 
     <TextView
         android:id="@+id/pantallaInicio.tvTitulo"

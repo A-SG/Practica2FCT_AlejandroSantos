@@ -1,4 +1,4 @@
-package com.example.practica2fct_alejandrosantos.data.network.domain.ui.fragment
+package com.example.practica2fct_alejandrosantos.ui.fragment
 
 import android.app.DatePickerDialog
 import android.app.Dialog
@@ -10,7 +10,7 @@ import com.example.practica2fct_alejandrosantos.R
 import java.util.*
 
 
-class DatePickerFragmentFin (val listener: (day: Int, month:Int, year: Int)-> Unit) : DialogFragment(), DatePickerDialog.OnDateSetListener{
+class DatePickerFinFragment (val listener: (day: Int, month:Int, year: Int)-> Unit) : DialogFragment(), DatePickerDialog.OnDateSetListener{
 
         override fun onDateSet(view: DatePicker?, year: Int, month: Int, day: Int) {
         listener(day, month + 1, year)

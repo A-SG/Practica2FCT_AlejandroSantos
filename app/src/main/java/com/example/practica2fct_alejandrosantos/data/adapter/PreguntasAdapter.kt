@@ -1,9 +1,10 @@
-package com.example.practica2fct_alejandrosantos.preguntasFrecuentes
+package com.example.practica2fct_alejandrosantos.data.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practica2fct_alejandrosantos.R
+import com.example.practica2fct_alejandrosantos.data.model.Preguntas
 
 
 class PreguntasAdapter(val listaPreguntas: List<Preguntas>) : RecyclerView.Adapter<PreguntasViewHolder>() {

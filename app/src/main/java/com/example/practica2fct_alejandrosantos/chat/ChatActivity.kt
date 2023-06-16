@@ -15,13 +15,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.practica2fct_alejandrosantos.R
-import com.example.practica2fct_alejandrosantos.averias.NotificacionAveriasActivity
+import com.example.practica2fct_alejandrosantos.ui.NotificacionAveriasActivity
 import com.example.practica2fct_alejandrosantos.chat.Constants.AGENTE
 import com.example.practica2fct_alejandrosantos.chat.Constants.AVERIAS
 import com.example.practica2fct_alejandrosantos.chat.Constants.PREGUNTAS
 import com.example.practica2fct_alejandrosantos.chat.Constants.SALIR
 import com.example.practicasoporte.Chat.MessagingAdapter
-import com.example.practica2fct_alejandrosantos.preguntasFrecuentes.PreguntasFrecuentesActivity
+import com.example.practica2fct_alejandrosantos.ui.PreguntasFrecuentesActivity
 import kotlinx.coroutines.*
 
 class ChatActivity : AppCompatActivity() {

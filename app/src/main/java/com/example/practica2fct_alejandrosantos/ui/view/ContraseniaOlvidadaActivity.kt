@@ -1,4 +1,4 @@
-package com.example.practica2fct_alejandrosantos.data.network.domain.ui.view
+package com.example.practica2fct_alejandrosantos.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +7,7 @@ import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.databinding.ActivityContraseniaOlvidadaBinding
 import com.google.firebase.auth.FirebaseAuth
 
-class ContraseniaOlvidada : AppCompatActivity() {
+class ContraseniaOlvidadaActivity : AppCompatActivity() {
     private lateinit var binding: ActivityContraseniaOlvidadaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

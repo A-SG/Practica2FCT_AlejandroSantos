@@ -1,4 +1,4 @@
-package com.example.practica2fct_alejandrosantos.data.network.domain.ui.fragment
+package com.example.practica2fct_alejandrosantos.ui.fragment
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog

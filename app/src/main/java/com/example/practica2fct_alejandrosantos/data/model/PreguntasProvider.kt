@@ -1,6 +1,6 @@
-package com.example.practica2fct_alejandrosantos.preguntasFrecuentes
+package com.example.practica2fct_alejandrosantos.data.model
 
-import com.example.practica2fct_alejandrosantos.preguntasFrecuentes.Preguntas
+import com.example.practica2fct_alejandrosantos.data.model.Preguntas
 
 class PreguntasProvider {
 

@@ -1,13 +1,12 @@
-package com.example.practica2fct_alejandrosantos
+package com.example.practica2fct_alejandrosantos.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
+import com.example.practica2fct_alejandrosantos.R
 import com.example.practica2fct_alejandrosantos.databinding.ActivityCentroAyudaBinding
-import com.example.practica2fct_alejandrosantos.averias.NotificacionAveriasActivity
 import com.example.practica2fct_alejandrosantos.chat.ChatActivity
-import com.example.practica2fct_alejandrosantos.preguntasFrecuentes.PreguntasFrecuentesActivity
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 
