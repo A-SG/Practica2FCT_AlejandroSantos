@@ -22,7 +22,7 @@ class FacturasService @Inject constructor(private val api : ApiService, private 
             } catch (e : Exception){
                 mock.getFactura()
             }
-            Log.d("ListaConRetromock" , response.body().toString())
+
             response.body()!!
         }
     }
